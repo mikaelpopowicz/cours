@@ -1,0 +1,71 @@
+import java.util.Scanner;
+public class Compte {
+
+	private String nom, prenom;
+	private int numero;
+	private float solde;
+	
+	/*
+	 *  @@ Constructeur
+	 */
+	
+	public Compte(String nom, String prenom, int numero, float solde) {
+		this.setNom(nom);
+		this.setPrenom(prenom);
+		this.setNumero(numero);
+		this.setSolde(solde);
+	}
+	
+	
+	
+	/*
+	 *  @@ Getters
+	 */
+	
+	public String getNom() { return this.nom; }
+	public String getPrenom() { return this.prenom; }
+	public int getNumero() { return this.numero; }
+	public float getSolde() {return this.solde; }
+	
+	
+	
+	/*
+	 *  @@ Setters
+	 */
+	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+	
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	
+	public void setSolde(float solde) {
+		this.solde = solde;
+	}
+	
+	
+	
+	/*
+	 *  @@ Fonctions supplémentaires
+	 */
+	
+	public void saisir() {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("\nSaisir une rŽfŽrence -> ");
+		this.setRef(sc.nextInt());
+		System.out.println("\nSaisir une quantitŽ -> ");
+		this.setQte(sc.nextInt());
+		System.out.println("\nSaisir une dŽsignation -> ");
+		this.setDes(sc.next());
+		System.out.println("\nSaisir un prix -> ");
+		this.setPrix(sc.nextFloat());
+	}
+	
+}

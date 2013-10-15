@@ -85,14 +85,8 @@ public class Compte {
 			switch (choix) {
 				case 1: this.ouvrir();break;
 				case 2: System.out.println(this.afficher());break;
-				case 3: {
-					System.out.println("Saisir un montant à déposer \n");
-					this.deposer(sc.nextFloat());
-				}break;
-				case 4: {
-					System.out.println("Saisir un montant à retirer \n");
-					this.retirer(sc.nextFloat());
-				}break;
+				case 3: this.deposer(sc.nextFloat());break;
+				case 4: this.retirer(sc.nextFloat());break;
 				case 5: System.out.println(this.estEnDecouvert());break;
 			}
 		} while (choix != 0);

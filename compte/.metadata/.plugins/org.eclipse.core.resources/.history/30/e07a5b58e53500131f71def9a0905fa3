@@ -69,33 +69,28 @@ public class Compte {
 	}
 	
 	public void menu() {
-		int choix;
-		Scanner sc = new Scanner(System.in);
-		do {
-			System.out.println("\n\t--------------- Menu ---------------");
-			System.out.println("\n\t- 1 - Saisie d'un nouveau compte   -");
-			System.out.println("\n\t- 2 - Afficher                     -");
-			System.out.println("\n\t- 3 - Faire un dépot               -");
-			System.out.println("\n\t- 4 - Faire un retrait             -");
-			System.out.println("\n\t- 5 - Découvert ?                  -");
-			System.out.println("\n\t- 0 - Quitter                      -");
-			System.out.println("\n\t------------------------------------");
-			System.out.println("\n\n\tVotre choix -> ");
-			choix = sc.nextInt();
-			switch (choix) {
+		void menu() {
+			int choix;
+			Scanner sc = new Scanner(System.in);
+			do {
+				System.out.println("\n\t--------------- Menu ---------------");
+				System.out.println("\n\t- 1 - Saisie d'un nouveau compte   -");
+				System.out.println("\n\t- 2 - Afficher                     -");
+				System.out.println("\n\t- 3 - Faire un dépot               -");
+				System.out.println("\n\t- 4 - Faire un retrait             -");
+				System.out.println("\n\t- 5 - Découvert ?                  -");
+				System.out.println("\n\t- 0 - Quitter                      -");
+				System.out.println("\n\t------------------------------------");
+				System.out.println("\n\n\tVotre choix -> ");
+				choix = sc.nextInt();
+				switch (choix) {
 				case 1: this.ouvrir();break;
 				case 2: System.out.println(this.afficher());break;
-				case 3: {
-					System.out.println("Saisir un montant à déposer \n");
-					this.deposer(sc.nextFloat());
-				}break;
-				case 4: {
-					System.out.println("Saisir un montant à retirer \n");
-					this.retirer(sc.nextFloat());
-				}break;
-				case 5: System.out.println(this.estEnDecouvert());break;
-			}
-		} while (choix != 0);
+				case 3: this.deposer(sc.nextFloat());break;
+				case 4: this.retirer(sc.nextFloat());break;
+				case 5: System.out.println(this.estEnDecouver());break;
+				}
+			} while (choix != 0);
 	}
 	
 	public String afficher() {
@@ -114,22 +109,4 @@ public class Compte {
 	public void retirer(float montant) {
 		this.setSolde(this.getSolde()-montant);
 	}
-	
-	public String estEnDecouvert() {
-		if (this.getSolde() < 0) {
-			return "Votre compte est en découvert";
-		} else if (this.getSolde() == 0) {
-			return "Votre compte est vide";
-		} else {
-			return "Votre compte est en santé";
-		}
-	}
-	
-	public static void main(String[] args) {
-		//Création d'un compte vide
-		Compte test = new Compte("", "", 0, 0);
-		
-		test.menu();
-	}
-	
- }
+}

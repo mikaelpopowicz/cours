@@ -1,0 +1,88 @@
+import java.util.Scanner;
+public class Compte {
+
+	private String nom, prenom;
+	private int numero;
+	private float solde;
+	
+	/*
+	 *  @@ Constructeur
+	 */
+	
+	public Compte(String nom, String prenom, int numero, float solde) {
+		this.setNom(nom);
+		this.setPrenom(prenom);
+		this.setNumero(numero);
+		this.setSolde(solde);
+	}
+	
+	
+	
+	/*
+	 *  @@ Getters
+	 */
+	
+	public String getNom() { return this.nom; }
+	public String getPrenom() { return this.prenom; }
+	public int getNumero() { return this.numero; }
+	public float getSolde() {return this.solde; }
+	
+	
+	
+	/*
+	 *  @@ Setters
+	 */
+	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+	
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+	
+	public void setSolde(float solde) {
+		this.solde = solde;
+	}
+	
+	
+	
+	/*
+	 *  @@ Fonctions supplémentaires
+	 */
+	
+	public void ouvrir() {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.println("\nSaisir votre nom -> ");
+		this.setNom(sc.next());
+		System.out.println("\nSaisir votre prénom -> ");
+		this.setPrenom(sc.next());
+		System.out.println("\nSaisir votre numéro de compte -> ");
+		this.setNumero(sc.nextInt());
+		System.out.println("\nSaisir votre solde -> ");
+		this.setSolde(sc.nextFloat());
+	}
+	
+	public void menu() {
+		void menu() {
+			int choix;
+			Scanner sc = new Scanner(System.in);
+			do {
+				System.out.println("\n\t--------------- Menu ---------------");
+				System.out.println("\n\t- 1 - Saisie d'un nouveau compte   -");
+				System.out.println("\n\t- 2 - Afficher                     -");
+				System.out.println("\n\t- 3 - Faire un dépot               -");
+				System.out.println("\n\t- 4 - Faire un retrait             -");
+				System.out.println("\n\t- 5 - Vendre                       -");
+				System.out.println("\n\t- 0 - Quitter                      -");
+				System.out.println("\n\t------------------------------------");
+				System.out.println("\n\n\tVotre choix -> ");
+				choix = sc.nextInt();
+	}
+	
+}
