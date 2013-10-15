@@ -117,7 +117,7 @@ class compte {
 		} else if ($this->getSolde() > 0 ) {
 			return false;
 		} else {
-			return;
+			return "";
 		}
 	}	
 }

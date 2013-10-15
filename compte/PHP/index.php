@@ -22,12 +22,12 @@ if (isset($_SESSION['compte'])) {
 		<div class="masthead">
 			<ul class="nav nav-pills pull-right">
 				<li class="active"><a href="index.php">Accueil</a></li>
-				<li><a href="">Retrait</a></li>
-				<li><a href="">Dépot</a></li>
+				<li><a href="retrait.php">Retrait</a></li>
+				<li><a href="depot.php">Dépot</a></li>
 				<li></li>
 				<li>
 					<form method="post">
-						<button class="btn btn-small btn-danger" type="submit" name="supprimer">Supprimer le compte</button>
+						<button class="btn btn-danger" type="submit" name="supprimer">Supprimer le compte</button>
 					</form>
 				</li>
 			</ul>
@@ -37,7 +37,7 @@ if (isset($_SESSION['compte'])) {
 		<hr>
 
 		<div class="page-header">
-			<h1>Compte bancaire <small><?php echo $_SESSION['compte']->getNumero();?></small></h1>
+			<h1>Compte bancaire <small>n° <?php echo $_SESSION['compte']->getNumero();?></small></h1>
 		</div>
 		
 		<dl class="dl-horizontal">
@@ -58,10 +58,13 @@ if (isset($_SESSION['compte'])) {
 			</dt>
 			<dd>
 <?php
-if ($_SESSION['compte']->estEnDecouvert() != FALSE) {
-	$class = "badge-error";
-} else if ($_SESSION['compte']->estEnDecouvert() == FALSE) {
-	$class= "badge-success";
+$dec = $_SESSION['compte']->estEnDecouvert();
+if ($dec != "" && ($dec == FALSE || $dec == TRUE)) {
+	if ($dec == TRUE) {
+		$class = "badge-error";
+	} else {
+		$class = "badge-succes";
+	}
 } else {
 	$class = "badge-info";
 }
