@@ -24,7 +24,6 @@ if (isset($_SESSION['compte'])) {
 				<li class="active"><a href="index.php">Accueil</a></li>
 				<li><a href="retrait.php">Retrait</a></li>
 				<li><a href="depot.php">Dépot</a></li>
-				<li></li>
 				<li>
 					<form method="post">
 						<button class="btn btn-danger" type="submit" name="supprimer">Supprimer le compte</button>
@@ -58,25 +57,23 @@ if (isset($_SESSION['compte'])) {
 			</dt>
 			<dd>
 <?php
-$dec = $_SESSION['compte']->estEnDecouvert();
-if ($dec != "" && ($dec == FALSE || $dec == TRUE)) {
-	if ($dec == TRUE) {
-		$class = "badge-error";
-	} else {
-		$class = "badge-succes";
-	}
-} else {
-	$class = "badge-info";
-}
 ?>
-				<span class='badge <?php echo $class;?>'>
+				<span class='badge <?php echo $_SESSION['compte']->estEnDecouvert();?>'>
 					<?php echo $_SESSION['compte']->getSolde();?> €
 				</span>
 			</dd>
 		</dl>
-
+		<br />
+		<br />
+		<dl class="dl-horizontal">
+			<dt>
+				Légende :
+			</dt>
+			<dd>
+				<span class="badge badge-important">A découvert</span>    <span class="badge badge-info">Vide</span>   <span class="badge badge-success">En santé</span>
+			</dd>
+		</dl>
 		<hr>
-	
 	    <div class="footer">
 	      <p>&copy; POO Bank 2013</p>
 	    </div>

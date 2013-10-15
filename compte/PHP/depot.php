@@ -18,17 +18,17 @@ ob_start();
 </head>
 <body>
 <?php
-if (isset($_POST['retirer'])) {
+if (isset($_POST['deposer'])) {
 	//Vérification de la valeur entrée
 	$verif = "#^[1-9]+\d*\.?\d*$#";
-	if (preg_match($verif, $_POST['retrait']) == 1) {
+	if (preg_match($verif, $_POST['depot']) == 1) {
 		//Utilisation de la méthode retirer
-		$_SESSION['compte']->retirer($_POST["retrait"]);
+		$_SESSION['compte']->deposer($_POST["depot"]);
 
 		//Redirection vers la page d'accueil
 		header("Location: index.php");
 	} else {
-		header("Location: retrait.php");
+		header("Location: depot.php");
 	}	
 } else {
 ?>
@@ -36,8 +36,8 @@ if (isset($_POST['retirer'])) {
 		<div class="masthead">
 			<ul class="nav nav-pills pull-right">
 				<li><a href="index.php">Accueil</a></li>
-				<li class="active"><a href="retrait.php">Retrait</a></li>
-				<li><a href="depot.php">Dépot</a></li>
+				<li><a href="retrait.php">Retrait</a></li>
+				<li class="active"><a href="depot.php">Dépot</a></li>
 				<li>
 					<form method="post">
 						<button class="btn btn-danger" type="submit" name="supprimer">Supprimer le compte</button>
@@ -50,21 +50,21 @@ if (isset($_POST['retirer'])) {
 		<hr>
 
 		<div class="page-header">
-			<h1>Retrait sur le compte <small>n° <?php echo $_SESSION['compte']->getNumero();?></small></h1>
+			<h1>Dépot sur le compte <small>n° <?php echo $_SESSION['compte']->getNumero();?></small></h1>
 		</div>
 		<form method="post" class="form-horizontal">
-			<!-- Prénom -->
+			<!-- Dépot -->
 			<div class="control-group">
-				<label class="control-label" for="Retrait">Montant</label>
+				<label class="control-label" for="Depot">Montant</label>
 				<div class="controls">
-					<input type="text" id="Retrait" name="retrait">
+					<input type="text" id="Depot" name="depot">
 				</div>
 			</div>
 			<!-- Boutons -->
 			<div class="control-group">
 				<div class="controls">
 					<button class="btn" type="reset">Réinitialiser</button>
-					<button class="btn btn-primary" type="submit" name="retirer">Effectuer retrait</button>
+					<button class="btn btn-primary" type="submit" name="deposer">Effectuer dépot</button>
 				</div>
 			</div>
 		</form>

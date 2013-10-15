@@ -95,29 +95,19 @@ class compte {
 	}
 	
 	public function deposer($euro) {
-		if (is_float($euro) || is_int($euro)) {
-			$this->setSolde($this->getSolde()+$euro);
-		} else {
-			trigger_error('La somme de dépot n\'est pas correctte', E_USER_WARNING);
-			return;
-		}
+		$this->setSolde($this->getSolde()+(float)$euro);
 	}
 	public function retirer($euro) {
-		if (is_float($euro) || is_int($euro)) {
-			$this->setSolde($this->getSolde()-$euro);
-		} else {
-			trigger_error('La somme de retrait n\'est pas correctte', E_USER_WARNING);
-			return;
-		}
+		$this->setSolde($this->getSolde()-(float)$euro);
 	}
 	
 	public function estEnDecouvert() {
 		if ($this->getSolde() < 0 ) {
-			return true;
-		} else if ($this->getSolde() > 0 ) {
-			return false;
+			return "badge-important";
+		} else if ($this->getSolde() == 0 ) {
+			return "badge-info";
 		} else {
-			return "";
+			return "badge-success";
 		}
 	}	
 }
