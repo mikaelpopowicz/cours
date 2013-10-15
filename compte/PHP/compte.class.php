@@ -113,9 +113,11 @@ class compte {
 	
 	public function estEnDecouvert() {
 		if ($this->getSolde() < 0 ) {
-			return 'Le compte est en découvert';
+			return true;
+		} else if ($this->getSolde() > 0 ) {
+			return false;
 		} else {
-			return 'Le compte n\'est pas en découvert';
+			return;
 		}
 	}	
 }

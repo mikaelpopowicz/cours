@@ -1,5 +1,8 @@
 <?php
+//Inclusion de la classe
+include "compte.class.php";
 session_start();
+ob_start(); 
 //echo '<pre>';print_r($_SESSION);echo '</pre>';
 ?>
 <html>
@@ -13,6 +16,32 @@ session_start();
 
 </head>
 <body>
+<?php
+if (isset($_POST['inscrire'])) {
+	
+	//Création d'un numéro de compte aléatoire
+	$number = "1234567890";
+	$nb = "";
+	for ($i = 0; $i < 10; $i++) {
+		$occurence = substr($number, mt_rand(0, strlen($number)-1), 1);
+		$nb .= $occurence;
+	}
+	
+	//Création de l'objet
+	$compte = new compte(array(
+		"nom" => $_POST['nom'],
+		"prenom" => $_POST['prenom'],
+		"numero" => intval($nb),
+		"solde" => 0
+	));
+	
+	//Stockage du compte dans la session
+	$_SESSION['compte'] = $compte;
+	
+	//Redirection vers la page d'accueil
+	header("Location: index.php");
+} else {
+?>
 	<div class="container-narrow">
 		<div class="masthead">
 			<ul class="nav nav-pills pull-right">
@@ -55,5 +84,9 @@ session_start();
 	      <p>&copy; POO Bank 2013</p>
 	    </div>
 	</div>
+<?php
+}
+ob_flush();
+?>
 </body>
 </html>

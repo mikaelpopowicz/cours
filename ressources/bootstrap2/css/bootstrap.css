@@ -224,7 +224,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333333;
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
 }
 
 a {
@@ -845,12 +845,12 @@ ol.inline > li {
 }
 
 dl {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 dt,
 dd {
-  line-height: 10px;
+  line-height: 20px;
 }
 
 dt {
@@ -858,7 +858,7 @@ dt {
 }
 
 dd {
-  margin-left: wpx;
+  margin-left: 10px;
 }
 
 .dl-horizontal {
@@ -1088,7 +1088,7 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
   display: inline-block;
-  height: 30px;
+  height: 20px;
   padding: 4px 6px;
   margin-bottom: 10px;
   font-size: 14px;
@@ -3110,6 +3110,20 @@ table th[class*="span"],
   padding: 19px;
   margin-bottom: 20px;
   background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.well-white {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
   border: 1px solid #e3e3e3;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
@@ -6161,44 +6175,4 @@ a.badge:focus {
 
 .affix {
   position: fixed;
-}
-
-.well-font-menu {
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
-  -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-          border-radius: 10px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-}
-
-.well-font-jour {
-  min-height: 20px;
-  padding: 19px;
-  margin-bottom: 20px;
-  background-color: #e3d4c5;
-  border: 1px solid #e3e3e3;
-  -webkit-border-radius: 10px;
-     -moz-border-radius: 10px;
-          border-radius: 10px;
-  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
-}
-
-.titre {
-	color: #9f5f5f;;
-}
-
-.jour {
-	color: #1d0b0b;
-}
-
-.print h1 {
-	font-size: 57px;
 }

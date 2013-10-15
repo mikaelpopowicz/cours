@@ -1,5 +1,7 @@
 <?php
+include "compte.class.php";
 session_start();
+ob_start();
 ?>
 <html>
 <head>
@@ -13,21 +15,19 @@ session_start();
 </head>
 <body>
 <?php
-include 'compte.class.php';
 if (isset($_SESSION['compte'])) {
-	echo '<pre>';print_r($_SESSION);echo '</pre>';
 ?>
 
 	<div class="container-narrow">
 		<div class="masthead">
 			<ul class="nav nav-pills pull-right">
-				<li class="active"><a href="#">Accueil</a></li>
+				<li class="active"><a href="index.php">Accueil</a></li>
 				<li><a href="">Retrait</a></li>
 				<li><a href="">Dépot</a></li>
 				<li></li>
 				<li>
 					<form method="post">
-						<button class="btn btn-small btn-danger" type="submit" name="supprimer">Détruite le compte</button>
+						<button class="btn btn-small btn-danger" type="submit" name="supprimer">Supprimer le compte</button>
 					</form>
 				</li>
 			</ul>
@@ -36,11 +36,41 @@ if (isset($_SESSION['compte'])) {
 
 		<hr>
 
-		<div class="jumbotron">
-			<h1>Votre compte à la POO Bank</h1>
-			<p class="lead">Vous n'avez pas encore de compte chez nous, alors n'attendez plus</p>
-			<a class="btn btn-large btn-success" href="inscription.php">S'inscrire maintenant</a>
+		<div class="page-header">
+			<h1>Compte bancaire <small><?php echo $_SESSION['compte']->getNumero();?></small></h1>
 		</div>
+		
+		<dl class="dl-horizontal">
+			<dt>
+				Nom
+			</dt>
+			<dd>
+				<?php echo $_SESSION['compte']->getNom();?>
+			</dd>
+			<dt>
+				Prénom
+			</dt>
+			<dd>
+				<?php echo $_SESSION['compte']->getPrenom();?>
+			</dd>
+			<dt>
+				Situation
+			</dt>
+			<dd>
+<?php
+if ($_SESSION['compte']->estEnDecouvert() != FALSE) {
+	$class = "badge-error";
+} else if ($_SESSION['compte']->estEnDecouvert() == FALSE) {
+	$class= "badge-success";
+} else {
+	$class = "badge-info";
+}
+?>
+				<span class='badge <?php echo $class;?>'>
+					<?php echo $_SESSION['compte']->getSolde();?> €
+				</span>
+			</dd>
+		</dl>
 
 		<hr>
 	
@@ -52,7 +82,7 @@ if (isset($_SESSION['compte'])) {
 if (isset($_POST['supprimer'])) {
 	$_SESSION = array();
 	session_destroy();
-	echo "Le compte a bien été détruit";
+	header('Location: index.php');
 }
 ?>
 <?php
@@ -61,7 +91,7 @@ if (isset($_POST['supprimer'])) {
 <div class="container-narrow">
 	<div class="masthead">
 		<ul class="nav nav-pills pull-right">
-			<li class="active"><a href="#">Accueil</a></li>
+			<li class="active"><a href="index.php">Accueil</a></li>
 			<li><a href="inscription.php">Inscription</a></li>
 		</ul>
 		<h3 class="muted">POO Bank</h3>
@@ -83,6 +113,7 @@ if (isset($_POST['supprimer'])) {
 </div>
 <?php	
 }
+ob_flush();
 ?>
 </body>
 </html>
