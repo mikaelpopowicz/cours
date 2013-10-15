@@ -1,6 +1,5 @@
 //
 //  main.cpp
-//  exo.08.10.13
 //
 //  Created by Mikael Popowicz on 08/10/13.
 //  Copyright (c) 2013 Mikael Popowicz. All rights reserved.
