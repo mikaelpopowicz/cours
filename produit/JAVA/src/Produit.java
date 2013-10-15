@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Produit {
 	private int ref, qte;
@@ -53,6 +54,49 @@ public class Produit {
 	 *  @@ Fonctions supplémentaires
 	 */
 	
+	void saisir() {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("\nSaisir une référence -> ");
+		this.setRef(sc.nextInt());
+		System.out.println("\nSaisir une quantité -> ");
+		this.setQte(sc.nextInt());
+		System.out.println("\nSaisir une désignation -> ");
+		this.setDes(sc.next());
+		System.out.println("\nSaisir un prix -> ");
+		this.setPrix(sc.nextFloat());
+	}
+	
+	void menu() {
+		int choix;
+		Scanner sc = new Scanner(System.in);
+		do {
+			System.out.println("\n\t--------------- Menu ---------------");
+			System.out.println("\n\t- 1 - Saisie d'un nouveau produit  -");
+			System.out.println("\n\t- 2 - Afficher                     -");
+			System.out.println("\n\t- 3 - Total CA                     -");
+			System.out.println("\n\t- 4 - Approvisionner               -");
+			System.out.println("\n\t- 5 - Vendre                       -");
+			System.out.println("\n\t- 0 - Quitter                      -");
+			System.out.println("\n\t------------------------------------");
+			System.out.println("\n\n\tVotre choix -> ");
+			choix = sc.nextInt();
+			switch (choix) {
+				case 1: this.saisir();break;
+				case 2: System.out.println(this.afficher());break;
+				case 3: System.out.println("Le total du CA est de : "+this.total_prix()+" €");break;
+				case 4: {
+					System.out.println("Saisir une valeur à approvisioner \n");
+					this.approvisionner(sc.nextInt());
+				}break;
+				case 5: {
+					System.out.println("Saisir une quantité à vendre \n");
+					System.out.println(this.vendre(sc.nextInt()));
+				}
+			}
+		} while (choix != 0);
+	}
+	
 	public String afficher() {
 		String aff = "";
 		aff += "Référence: "+this.ref()+"\n";
@@ -83,27 +127,8 @@ public class Produit {
 		//Creation d'un objet Produit
 		Produit test = new Produit(1, 15, 575, "Un produit de fou");
 		
-		//Affichage de test
-		System.out.println(test.afficher());
-		
-		//Approvisionner test
-		test.approvisionner(10);
-		
-		//Affichage de test
-		System.out.println(test.afficher());
-		System.out.println(test.total_prix()+" €");
-		
-		//Vendre test
-		test.vendre(10);
-		
-		//Affichage de test
-		System.out.println(test.afficher());
-		
-		//Vendre test
-		System.out.println(test.vendre(30)+" \n");
-				
-		//Affichage de test
-		System.out.println(test.afficher());
+		//Affichage du menu
+		test.menu();
 	}
 }
 
