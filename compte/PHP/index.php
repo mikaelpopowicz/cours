@@ -24,21 +24,15 @@ if (isset($_SESSION['compte'])) {
 				<li class="active"><a href="index.php">Accueil</a></li>
 				<li><a href="retrait.php">Retrait</a></li>
 				<li><a href="depot.php">Dépot</a></li>
-				<li>
-					<form method="post">
-						<button class="btn btn-danger" type="submit" name="supprimer">Supprimer le compte</button>
-					</form>
-				</li>
 			</ul>
-			<h3 class="muted">POO Bank</h3>
+			<form method="post">
+				<h3 class="muted">POO Bank   |  <button class="btn btn-danger" type="submit" name="supprimer">Supprimer le compte</button></h3>
+			</form>
 		</div>
-
 		<hr>
-
 		<div class="page-header">
 			<h1>Compte bancaire <small>n° <?php echo $_SESSION['compte']->getNumero();?></small></h1>
 		</div>
-		
 		<dl class="dl-horizontal">
 			<dt>
 				Nom

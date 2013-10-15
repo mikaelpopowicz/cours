@@ -1,0 +1,14 @@
+
+public class compte {
+
+	private String nom, prenom;
+	private int numero;
+	private float solde;
+	
+	/*
+	 *  @@ Getters
+	 */
+	
+	public String getNom() { return this.nom; }
+	public String getPrenom() { return this.prenom; }
+}

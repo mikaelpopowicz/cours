@@ -38,11 +38,6 @@ if (isset($_POST['deposer'])) {
 				<li><a href="index.php">Accueil</a></li>
 				<li><a href="retrait.php">Retrait</a></li>
 				<li class="active"><a href="depot.php">Dépot</a></li>
-				<li>
-					<form method="post">
-						<button class="btn btn-danger" type="submit" name="supprimer">Supprimer le compte</button>
-					</form>
-				</li>
 			</ul>
 			<h3 class="muted">POO Bank</h3>
 		</div>
