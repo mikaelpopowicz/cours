@@ -73,11 +73,11 @@ if (isset($_SESSION['compte'])) {
 	    </div>
 	</div>
 <?php
-if (isset($_POST['supprimer'])) {
-	$_SESSION = array();
-	session_destroy();
-	header('Location: index.php');
-}
+	if (isset($_POST['supprimer'])) {
+		$_SESSION = array();
+		session_destroy();
+		header('Location: index.php');
+	}
 ?>
 <?php
 } else {
