@@ -1,0 +1,14 @@
+
+public class Epargne extends Compte {
+	private float taux;
+
+	public float getTaux() {
+		return taux;
+	}
+
+	public void setTaux(float taux) {
+		this.taux = taux;
+	}
+	
+	
+}

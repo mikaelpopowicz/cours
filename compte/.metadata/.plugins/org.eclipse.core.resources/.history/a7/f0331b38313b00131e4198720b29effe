@@ -1,0 +1,6 @@
+
+public class Banque {
+	
+	private Compte comptes[] = new Compte [20];
+	
+}

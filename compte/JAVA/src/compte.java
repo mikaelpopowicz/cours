@@ -1,19 +1,31 @@
-import java.util.Scanner;
 public class Compte {
 
-	private String nom, prenom;
-	private int numero;
-	private float solde;
+	protected String nom, prenom;
+	protected int numero;
+	protected float solde;
 	
 	/*
 	 *  @@ Constructeur
 	 */
+	public Compte() {
+		this.setNom("");
+		this.setPrenom("");
+		this.setSolde(0);
+		this.setNumero(0);
+	}
 	
 	public Compte(String nom, String prenom, int numero, float solde) {
 		this.setNom(nom);
 		this.setPrenom(prenom);
 		this.setNumero(numero);
 		this.setSolde(solde);
+	}
+	
+	public Compte(Compte compte) {
+		this.setNom(compte.getNom());
+		this.setPrenom(compte.getPrenom());
+		this.setNumero(compte.getNumero());
+		this.setSolde(compte.getSolde());
 	}
 	
 	
@@ -56,21 +68,19 @@ public class Compte {
 	 */
 	
 	public void ouvrir() {
-		Scanner sc = new Scanner(System.in);
 
 		System.out.println("\nSaisir votre nom -> ");
-		this.setNom(sc.next());
+		this.setNom(Console.saisirString());
 		System.out.println("\nSaisir votre prénom -> ");
-		this.setPrenom(sc.next());
+		this.setPrenom(Console.saisirString());
 		System.out.println("\nSaisir votre numéro de compte -> ");
-		this.setNumero(sc.nextInt());
+		this.setNumero(Console.saisirInt());
 		System.out.println("\nSaisir votre solde -> ");
-		this.setSolde(sc.nextFloat());
+		this.setSolde(Console.saisirFloat());
 	}
 	
 	public void menu() {
 		int choix;
-		Scanner sc = new Scanner(System.in);
 		do {
 			System.out.println("\n\t--------------- Menu ---------------");
 			System.out.println("\n\t- 1 - Saisie d'un nouveau compte   -");
@@ -81,17 +91,17 @@ public class Compte {
 			System.out.println("\n\t- 0 - Quitter                      -");
 			System.out.println("\n\t------------------------------------");
 			System.out.println("\n\n\tVotre choix -> ");
-			choix = sc.nextInt();
+			choix = Console.saisirInt();
 			switch (choix) {
 				case 1: this.ouvrir();break;
 				case 2: System.out.println(this.afficher());break;
 				case 3: {
 					System.out.println("Saisir un montant à déposer \n");
-					this.deposer(sc.nextFloat());
+					this.deposer(Console.saisirFloat());
 				}break;
 				case 4: {
 					System.out.println("Saisir un montant à retirer \n");
-					this.retirer(sc.nextFloat());
+					this.retirer(Console.saisirFloat());
 				}break;
 				case 5: System.out.println(this.estEnDecouvert());break;
 			}
@@ -127,7 +137,7 @@ public class Compte {
 	
 	public static void main(String[] args) {
 		//Création d'un compte vide
-		Compte test = new Compte("", "", 0, 0);
+		Compte test = new Compte();
 		
 		test.menu();
 	}

@@ -1,0 +1,16 @@
+
+public class Banque {
+	
+	private Compte comptes[];
+	
+	public Banque() {
+		this.setComptes(new Compte());
+	}
+	
+	
+	public void setComptes(Compte compte) {
+		this.comptes[] = new Compte();
+	}
+	
+	
+}

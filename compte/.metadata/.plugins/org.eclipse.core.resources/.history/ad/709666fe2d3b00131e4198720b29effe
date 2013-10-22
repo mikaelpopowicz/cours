@@ -1,0 +1,11 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+
+public class Console {
+	/**
+	 * Cette classe permet de saisir des donnée selon leur type à la place de la classe Scanner
+	 */
+
+	static BufferedReader entree = new BufferedReader(new InputStreamReader(System.in));
+}
