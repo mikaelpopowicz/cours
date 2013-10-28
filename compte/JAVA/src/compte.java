@@ -94,7 +94,7 @@ public class Compte {
 			choix = Console.saisirInt();
 			switch (choix) {
 				case 1: this.ouvrir();break;
-				case 2: System.out.println(this.afficher());break;
+				case 2: this.afficher();break;
 				case 3: {
 					System.out.println("Saisir un montant à déposer \n");
 					this.deposer(Console.saisirFloat());
@@ -108,13 +108,13 @@ public class Compte {
 		} while (choix != 0);
 	}
 	
-	public String afficher() {
+	public void afficher() {
 		String aff;
 		aff = "";
 		aff += "\nCompte n° "+this.getNumero()+"\n";
 		aff += this.getNom()+" "+this.getPrenom()+"\n";
 		aff += "Solde : "+this.getSolde()+"\n";
-		return aff;
+		System.out.println(aff);
 	}
 	
 	public void deposer(float montant) {

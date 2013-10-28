@@ -1,0 +1,33 @@
+
+public class Banque {
+	
+	private Compte comptes[];
+	private int taille;
+	
+	/**
+	 * Constructeur
+	 */
+	public Banque(int nbCompte) {
+		this.setComptes(nbCompte);
+	}
+	
+	/**
+	 * Setter
+	 * @param Compte compte Objet Compte ˆ rentrer dans le tableau des comptes
+	 */
+	public void setComptes(int nbCompte) {
+		this.comptes = new Compte[nbCompte];
+	}
+	
+	/**
+	 * Getter
+	 * @return Compte comptes Tableau contenant des objets Compte
+	 */
+	public Compte[] getComptes() {
+		return this.comptes;
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

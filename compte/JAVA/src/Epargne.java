@@ -2,12 +2,24 @@ public class Epargne extends Compte {
 	private float taux;
 
 	/**
-	 * Constructeur
+	 * Constructeur 
 	 */
 	public Epargne() {
 		super();
 		this.setTaux(0);
-		
+	}
+	
+	/**
+	 * Constructeur avec paramtres
+	 * @param nom
+	 * @param prenom
+	 * @param numero
+	 * @param solde
+	 * @param taux
+	 */
+	public Epargne(String nom, String prenom, int numero, float solde, float taux) {
+		super(nom, prenom, numero, solde);
+		this.setTaux(taux);
 	}
 	
 	public float getTaux() {
@@ -18,5 +30,14 @@ public class Epargne extends Compte {
 		this.taux = taux;
 	}
 	
+	public void ouvrir() {
+		super.ouvrir();
+		System.out.println("\nSaisir le taux -> ");
+		this.setTaux(Console.saisirFloat());
+	}
 	
+	public void afficher() {
+		super.afficher();
+		System.out.println("\nCompte n¡ "+this.getNumero()+"\n");
+	}
 }
