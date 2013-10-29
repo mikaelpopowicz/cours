@@ -1,0 +1,23 @@
+
+public class Parc {
+	
+	private Vehicule lesvehicules [];
+	private int taille;
+	
+	public int getTaille()
+	{
+		return this.taille;
+	}
+	
+	public void setTaille(int taille)
+	{
+		this.taille = taille;
+	}
+	
+	public Parc(int taille)
+	{
+		this.setTaille(taille);
+		this.lesvehicules = new Vehicule[taille];
+	}
+
+}

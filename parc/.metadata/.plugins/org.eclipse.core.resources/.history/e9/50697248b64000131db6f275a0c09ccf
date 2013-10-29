@@ -1,0 +1,60 @@
+import java.util.Vector;
+
+
+public class Vehicule {
+
+	protected String marque, matricule;
+	
+	
+	/**
+	 * Fonction Getter de la marque
+	 * @return String marque La marque du véhicule
+	 */
+	public String getMarque() {
+		return this.marque;
+	}
+
+	public void setMarque(String marque) {
+		this.marque = marque;
+	}
+
+	public String getMatricule() {
+		return this.matricule;
+	}
+
+	public void setMatricule(String matricule) {
+		this.matricule = matricule;
+	}
+	
+	
+	/**
+	 * 	Constructeurs
+	 **/
+	public Vehicule()
+	{
+		
+	}
+	
+	public Vehicule(String marque, String matricule)
+	{
+		
+	}
+	
+	
+	public void saisir()
+	{
+		
+	}
+	
+	public void afficher()
+	{
+		
+	}
+	
+	public String toXML()
+	{
+		return marque;
+		
+	}
+	
+}

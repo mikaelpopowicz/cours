@@ -1,0 +1,77 @@
+
+public class Vehicule {
+
+	protected String marque, matricule;
+	
+	
+	/**
+	 * Fonction Getter de la marque
+	 * @return String marque La marque du vŽhicule
+	 */
+	public String getMarque() {
+		return this.marque;
+	}
+	
+	/**
+	 * 
+	 * @param marque String la marque a enregistrer
+	 */
+	public void setMarque(String marque) {
+		this.marque = marque;
+	}
+
+	public String getMatricule() {
+		return this.matricule;
+	}
+
+	public void setMatricule(String matricule) {
+		this.matricule = matricule;
+	}
+	
+	
+	/**
+	 * 	Constructeurs
+	 **/
+	public Vehicule()
+	{
+		this.setMarque("");
+		this.setMatricule("");
+	}
+	
+	public Vehicule(String marque, String matricule)
+	{
+		this.setMarque(marque);
+		this.setMatricule(matricule);
+	}
+	
+	
+	public void saisir()
+	{
+		System.out.println("\nSaisir la marque -> ");
+        this.setMarque(Console.saisirString());
+        System.out.println("\nSaisir le matricule -> ");
+        this.setMatricule(Console.saisirString());
+	}
+	
+	public void afficher()
+	{
+		System.out.println("\n\tMarque : " + this.getMarque());
+		System.out.println("\n\tMatricule : " + this.getMatricule());
+	}
+	
+	public String toXML()
+	{
+		String xml = "";
+		xml += "<?xml version='1.0' encoding='iso-8859-1' ?>\n";
+		xml += "<informations>\n";
+		xml += "\t<marque>\n";
+		xml += "\t\t" + this.getMarque() + "\n";
+		xml += "\t</marque>\n";
+		xml += "\t<matricule>\n";
+		xml += "\t\t" + this.getMatricule() + "\n";
+		xml += "\t</matricule>\n";
+		xml += "</informations>";
+		return xml;
+	}
+	
+}

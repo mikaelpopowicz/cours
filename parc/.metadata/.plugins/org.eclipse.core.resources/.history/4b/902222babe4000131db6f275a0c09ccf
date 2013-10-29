@@ -1,0 +1,60 @@
+
+public class Parc {
+	
+	private Vehicule lesvehicules [];
+	private int nbvehicule;
+	
+	public int getNbvehicule()
+	{
+		return this.nbvehicule;
+	}
+	
+	public void setNbvehicule(int nbvehicule)
+	{
+		this.nbvehicule = nbvehicule;
+	}
+	
+	public Parc(int taille)
+	{
+		this.setNbvehicule(0);
+		this.lesvehicules = new Vehicule[taille];
+	}
+
+	public void ajouter()
+	{
+		int choix;
+		do {
+			System.out.println("\n--------------MENU--------------");
+			System.out.println("\n- 1 - Ajout d'une voiture      -");
+			System.out.println("\n- 2 - Ajout d'un utilitaire    -");
+			System.out.println("\n- 3 - Ajout d'un deux roues    -");
+			System.out.println("\n- 0 - Quitter                  -");
+			System.out.println("\n--------------------------------\n");
+			choix = Console.saisirInt();
+			switch (choix) {
+			case 1:
+				Voiture uneV = new Voiture();
+				uneV.saisir();
+				this.lesvehicules[this.getNbvehicule()] = uneV;
+				this.setNbvehicule(this.getNbvehicule()+1);
+				break;
+			case 2:
+				Utilitaire unU = new Utilitaire();
+				unU.saisir();
+				this.lesvehicules[this.getNbvehicule()] = unU;
+				this.setNbvehicule(this.getNbvehicule()+1);
+				break;
+			case 3:
+				DeuxRoues unD = new DeuxRoues();
+				unD.saisir();
+				this.lesvehicules[this.getTaille()] = unD;
+				this.setNbvehicule(this.getTaille()+1);
+				break;
+			default:
+				break;
+			}
+		} while (choix != 0);
+	}
+	
+	
+}

@@ -1,0 +1,14 @@
+
+public class Parc {
+	
+	private Voiture vtab[];
+
+	public Voiture[] getVtab() {
+		return vtab;
+	}
+
+	public void setVtab(Voiture vtab[]) {
+		this.vtab = vtab;
+	}
+
+}

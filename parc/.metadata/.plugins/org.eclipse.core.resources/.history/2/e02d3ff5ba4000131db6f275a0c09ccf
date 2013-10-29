@@ -1,0 +1,33 @@
+
+public class Utilitaire extends Vehicule {
+	
+	private float poidVide, charge;
+	
+	
+	public float getPoidVide() {
+		return poidVide;
+	}
+
+
+	public void setPoidVide(float poidVide) {
+		this.poidVide = poidVide;
+	}
+
+
+	public float getCharge() {
+		return charge;
+	}
+
+
+	public void setCharge(float charge) {
+		this.charge = charge;
+	}
+
+
+	public String toXML()
+	{
+		String xml = "";
+		return xml;
+	}
+
+}
