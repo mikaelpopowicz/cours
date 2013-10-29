@@ -1,0 +1,14 @@
+Delimiter @@
+
+CREATE TRIGGER animals
+BEFORE DELETE ON animal
+FOR EACH ROW
+BEGIN
+	IF YEAR(CURDATE())-YEAR(old.DATENAISSA) > 20
+	THEN
+		INSERT INTO archiveanimal VALUES
+		(old.NUMA, old.NUMP, old.NUMR, old.NOMA, old.DATENAISSA, old.TATOUAGE, CURDATE(), USER());
+	END IF;
+END @@
+
+Delimiter ;
