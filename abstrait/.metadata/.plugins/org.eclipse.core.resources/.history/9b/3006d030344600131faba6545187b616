@@ -1,0 +1,5 @@
+
+public interface iPersonne {
+	
+	public void saisir();
+}

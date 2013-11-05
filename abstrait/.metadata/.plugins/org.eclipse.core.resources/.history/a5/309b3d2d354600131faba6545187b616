@@ -27,17 +27,8 @@ public class Enfant extends Personne{
 	{
 		System.out.println("\nDonner le nom : ");
 		this.setNom(Console.saisirString());
-		System.out.println("\nDonner le nom : ");
 		this.setPrenom(Console.saisirString());
-		System.out.println("\nDonner le nom : ");
 		this.setAge(Console.saisirInt());
-	}
-
-	public boolean HF() {
-		return false;
-	}
-
-	public void voyager(String pays) {
 	}
 	
 }

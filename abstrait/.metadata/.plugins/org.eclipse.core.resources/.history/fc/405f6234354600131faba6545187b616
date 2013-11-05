@@ -37,4 +37,8 @@ public abstract class Personne implements iPersonne {
 
 	@Override
 	abstract public void voyager(String pays);
+	
+
+	
+	
 }

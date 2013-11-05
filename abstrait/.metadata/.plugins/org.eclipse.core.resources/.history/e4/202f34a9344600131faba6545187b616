@@ -33,8 +33,12 @@ public abstract class Personne implements iPersonne {
 	abstract public void afficher();
 
 	@Override
-	abstract public boolean HF();
+	abstractpublic boolean HF();
 
 	@Override
 	abstract public void voyager(String pays);
+	
+
+	
+	
 }
