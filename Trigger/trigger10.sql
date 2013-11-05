@@ -20,7 +20,10 @@ BEGIN
 	then
 		SET nba = 0;
 	end if;
-	SET new.id_cli = nba + 1;
+	if new.id_cli = 0
+	then
+		SET new.id_cli = nba + 1;
+	end if;
 		
 	/*
 	*	Insertion du particulier dans client si il n'existe pas
@@ -71,7 +74,10 @@ BEGIN
 	then
 		SET nba = 0;
 	end if;
-	SET new.id_cli = nba + 1;
+	if new.id_cli = 0
+	then
+		SET new.id_cli = nba + 1;
+	end if;
 		
 	/*
 	*	Insertion de l'entreprise dans client si elle n'existe pas
@@ -110,7 +116,7 @@ CREATE TRIGGER update_part
 	BEFORE UPDATE ON particulier
 	FOR EACH ROW
 BEGIN
-	Update client SET id_ad = new.id_cli, nom = new.nom_cli Where id_cli = old.id_cli;
+	Update client SET id_cli = new.id_cli, nom_cli = new.nom_cli Where id_cli = old.id_cli;
 END @@
 
 
@@ -122,7 +128,7 @@ CREATE TRIGGER update_ent
 	BEFORE UPDATE ON entreprise
 	FOR EACH ROW
 BEGIN
-	Update client SET id_ad = new.id_cli, nom = new.nom_cli Where id_cli = old.id_cli;
+	Update client SET id_cli = new.id_cli, nom_cli = new.nom_cli Where id_cli = old.id_cli;
 END @@
 
 
