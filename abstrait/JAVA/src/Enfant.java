@@ -1,0 +1,33 @@
+
+public class Enfant extends Personne{
+	private int age;
+
+	public int getAge() {
+		return this.age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	Enfant(String nom, String prenom, int age)
+	{
+		super(nom, prenom);
+		this.setAge(age);
+	}
+	
+	public void afficher()
+	{
+		super.afficher();
+		System.out.println("\nAge : " + this.getAge());
+	}
+	
+	public void saisir()
+	{
+		System.out.println("\nDonner le nom : ");
+		this.setNom(Console.saisirString());
+		this.setPrenom(Console.saisirString());
+		this.setAge(Console.saisirInt());
+	}
+	
+}

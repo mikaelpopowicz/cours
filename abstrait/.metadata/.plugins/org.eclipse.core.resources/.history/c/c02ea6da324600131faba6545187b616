@@ -1,0 +1,11 @@
+
+public class Abstrait {
+
+	
+	public static void main(String[] args)
+	{
+		Personne unePersonne = new Personne("Alex", "Alex");
+		
+	}
+	
+}

@@ -1,0 +1,6 @@
+
+public class Enfant extend Personne{
+	private int age;
+	
+	
+}

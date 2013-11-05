@@ -1,0 +1,36 @@
+
+public abstract class Personne {
+	private String nom, prenom;
+
+	public String getNom() {
+		return this.nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getPrenom() {
+		return this.prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+	
+	
+	
+	Personne(String nom, String prenom)
+	{
+		this.setNom(nom);
+		this.setPrenom(prenom);
+	}
+	
+	public void afficher()
+	{
+		System.out.println("\nNom : " + this.getNom());
+		System.out.println("\nPrenom : " + this.getPrenom());
+	}
+	
+	abstract void saisir();
+}
