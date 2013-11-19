@@ -61,6 +61,5 @@ public class Ecole {
 			xml += this.getMesFilieres().get(i).toXml();
 		}
 		xml += "\n</Ecole>";
-		return xml;
 	}
 }

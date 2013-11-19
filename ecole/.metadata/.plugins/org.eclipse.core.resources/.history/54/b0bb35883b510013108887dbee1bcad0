@@ -48,19 +48,4 @@ public class Ecole {
 		return result;
 	}
 	
-	public String toXml() {
-		String xml = "";
-		xml += "<?xml version='1.0' encoding='iso-8859-1' ?>";
-		xml += "\n<Ecole>";
-		xml += "\n\t<nom>";
-		xml += "\n\t" + this.getNom();
-		xml += "\n\t</nom>";
-		xml += "\n\t<filieres>";
-		xml += "\n\t</filieres>";
-		for(int i = 0; i < this.getMesFilieres().size(); i++) {
-			xml += this.getMesFilieres().get(i).toXml();
-		}
-		xml += "\n</Ecole>";
-		return xml;
-	}
 }
