@@ -79,22 +79,11 @@ public class Ecole {
 			switch (choix) {
 			case 1:	this.saisir(); break;
 			case 2: this.afficher(); break;
-			case 3: this.toString(); break;
-			case 4: {
-				System.out.println("\nVeuillez donnez le numero de la filiere a gerer : ");
-				this.getMesFilieres().get(Console.saisirInt()).menu();
-			}
-			case 5: this.toXml(); break;
+			case 3: 
 
 			default:
 				break;
 			}
 		} while (choix != 0);
-	}
-	
-	public static void main(String args[]) {
-		
-		uneEcole = new Ecole();
-		uneEcole.
 	}
 }

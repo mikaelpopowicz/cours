@@ -63,38 +63,4 @@ public class Ecole {
 		xml += "\n</Ecole>";
 		return xml;
 	}
-	
-	public void menu() {
-		int choix;
-		do {
-			System.out.println("\n------------ MENU ------------");
-			System.out.println("\n-- 1 - Saisir               --");
-			System.out.println("\n-- 2 - Afficher             --");
-			System.out.println("\n-- 3 - Liste des filiere    --");
-			System.out.println("\n-- 4 - Gerer une filiere    --");
-			System.out.println("\n-- 5 - XML                  --");
-			System.out.println("\n-- 0 - Quitter              --");
-			System.out.println("\n------------------------------");
-			choix = Console.saisirInt();
-			switch (choix) {
-			case 1:	this.saisir(); break;
-			case 2: this.afficher(); break;
-			case 3: this.toString(); break;
-			case 4: {
-				System.out.println("\nVeuillez donnez le numero de la filiere a gerer : ");
-				this.getMesFilieres().get(Console.saisirInt()).menu();
-			}
-			case 5: this.toXml(); break;
-
-			default:
-				break;
-			}
-		} while (choix != 0);
-	}
-	
-	public static void main(String args[]) {
-		
-		uneEcole = new Ecole();
-		uneEcole.
-	}
 }

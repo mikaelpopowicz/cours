@@ -91,10 +91,4 @@ public class Ecole {
 			}
 		} while (choix != 0);
 	}
-	
-	public static void main(String args[]) {
-		
-		uneEcole = new Ecole();
-		uneEcole.
-	}
 }

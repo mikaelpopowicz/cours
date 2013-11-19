@@ -84,17 +84,10 @@ public class Ecole {
 				System.out.println("\nVeuillez donnez le numero de la filiere a gerer : ");
 				this.getMesFilieres().get(Console.saisirInt()).menu();
 			}
-			case 5: this.toXml(); break;
 
 			default:
 				break;
 			}
 		} while (choix != 0);
-	}
-	
-	public static void main(String args[]) {
-		
-		uneEcole = new Ecole();
-		uneEcole.
 	}
 }
