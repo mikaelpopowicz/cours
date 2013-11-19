@@ -74,29 +74,29 @@ public class Filiere {
 	
 	public String toXml() {
 		String xml = "";
-		xml += "\n\t\t<filiere>";
-		xml += "\n\t\t\t<nom>";
-		xml += "\n\t\t\t\t" + this.getNom();
-		xml += "\n\t\t\t</nom>";
-		xml += "\n\t\t\t<responsable>";
-		xml += "\n\t\t\t\t" + this.getResponsable();
-		xml += "\n\t\t\t</responsable>";
-		xml += "\n\t\t\t<diplome>";
-		xml += "\n\t\t\t\t" + this.getDiplome();
-		xml += "\n\t\t\t</diplome>";
-		xml += "\n\t\t\t<groupes>";
+		xml += "\n\t\t\t<filiere>";
+		xml += "\n\t\t\t\t<nom>";
+		xml += "\n\t\t\t\t\t" + this.getNom();
+		xml += "\n\t\t\t\t</nom>";
+		xml += "\n\t\t\t\t<responsable>";
+		xml += "\n\t\t\t\t\t" + this.getResponsable();
+		xml += "\n\t\t\t\t</responsable>";
+		xml += "\n\t\t\t\t<diplome>";
+		xml += "\n\t\t\t\t\t" + this.getDiplome();
+		xml += "\n\t\t\t\t</diplome>";
+		xml += "\n\t\t\t\t<groupes>";
 		for(int i = 0; i < this.getMesGroupes().size(); i++) {
 			this.getMesGroupes().get(i).toXml();
 		}
-		xml += "\n\t\t\t</groupes>";
-		xml += "\n\t\t</filiere>";
+		xml += "\n\t\t\t\t</groupes>";
+		xml += "\n\t\t\t</filiere>";
 		return xml;
 	}
 
 	public void ajouter() {
 		Groupe unG = new Groupe();
 		unG.saisir();
-		this.getMesGroupes().add(unG);
+		this.getMesGroupes()().add(unG);
 		System.out.println("\nUpdate success !");
 	}
 	
@@ -106,23 +106,21 @@ public class Filiere {
 			System.out.println("\n------------ MENU ------------");
 			System.out.println("\n-- 1 - Saisir               --");
 			System.out.println("\n-- 2 - Afficher             --");
-			System.out.println("\n-- 3 - Ajouter un groupe    --");
-			System.out.println("\n-- 4 - Liste des groupes    --");
-			System.out.println("\n-- 5 - Gerer un groupe      --");
-			System.out.println("\n-- 6 - XML                  --");
+			System.out.println("\n-- 3 - Liste des groupes    --");
+			System.out.println("\n-- 4 - Gerer un groupe      --");
+			System.out.println("\n-- 5 - XML                  --");
 			System.out.println("\n-- 0 - Quitter              --");
 			System.out.println("\n------------------------------");
 			choix = Console.saisirInt();
 			switch (choix) {
 			case 1:	this.saisir(); break;
 			case 2: this.afficher(); break;
-			case 3: this.ajouter(); break;
-			case 4: System.out.println(this.toString()); break;
-			case 5: {
+			case 3: this.toString(); break;
+			case 4: {
 				System.out.println("\nVeuillez donnez le numero de la filiere a gerer : ");
 				this.getMesGroupes().get(Console.saisirInt()).menu();
 			}
-			case 6: this.toXml(); break;
+			case 5: this.toXml(); break;
 
 			default:
 				break;

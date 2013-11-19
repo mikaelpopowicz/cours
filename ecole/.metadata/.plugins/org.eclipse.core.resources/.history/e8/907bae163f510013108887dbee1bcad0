@@ -104,7 +104,6 @@ public class Groupe {
 		xml += "\n\t\t\t\t\t\t" + this.getSalle();
 		xml += "\n\t\t\t\t\t</salle>";
 		xml += "\n\t\t\t\t\t<id>";
-		xml += "\n\t\t\t\t\t\t" + this.getIdGroupe();
 		xml += "\n\t\t\t\t\t</id>";
 		xml += "\n\t\t\t\t\t<eleves>";
 		for(int i = 0; i < this.mesEleves.size(); i++) {

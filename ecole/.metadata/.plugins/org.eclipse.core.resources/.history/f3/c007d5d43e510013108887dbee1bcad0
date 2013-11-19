@@ -56,10 +56,10 @@ public class Ecole {
 		xml += "\n\t" + this.getNom();
 		xml += "\n\t</nom>";
 		xml += "\n\t<filieres>";
+		xml += "\n\t</filieres>";
 		for(int i = 0; i < this.getMesFilieres().size(); i++) {
 			xml += this.getMesFilieres().get(i).toXml();
 		}
-		xml += "\n\t</filieres>";
 		xml += "\n</Ecole>";
 		return xml;
 	}
@@ -80,7 +80,7 @@ public class Ecole {
 			System.out.println("\n-- 3 - Ajouter une filiere  --");
 			System.out.println("\n-- 4 - Liste des filieres   --");
 			System.out.println("\n-- 5 - Gerer une filiere    --");
-			System.out.println("\n-- 6 - XML                  --");
+			System.out.println("\n-- 5 - XML                  --");
 			System.out.println("\n-- 0 - Quitter              --");
 			System.out.println("\n------------------------------");
 			choix = Console.saisirInt();

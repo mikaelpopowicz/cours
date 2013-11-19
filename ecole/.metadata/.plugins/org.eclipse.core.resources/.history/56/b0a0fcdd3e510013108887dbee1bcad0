@@ -56,10 +56,10 @@ public class Ecole {
 		xml += "\n\t" + this.getNom();
 		xml += "\n\t</nom>";
 		xml += "\n\t<filieres>";
+		xml += "\n\t</filieres>";
 		for(int i = 0; i < this.getMesFilieres().size(); i++) {
 			xml += this.getMesFilieres().get(i).toXml();
 		}
-		xml += "\n\t</filieres>";
 		xml += "\n</Ecole>";
 		return xml;
 	}

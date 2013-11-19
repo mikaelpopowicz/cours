@@ -56,19 +56,12 @@ public class Ecole {
 		xml += "\n\t" + this.getNom();
 		xml += "\n\t</nom>";
 		xml += "\n\t<filieres>";
+		xml += "\n\t</filieres>";
 		for(int i = 0; i < this.getMesFilieres().size(); i++) {
 			xml += this.getMesFilieres().get(i).toXml();
 		}
-		xml += "\n\t</filieres>";
 		xml += "\n</Ecole>";
 		return xml;
-	}
-	
-	public void ajouter() {
-		Filiere uneF = new Filiere();
-		uneF.saisir();
-		this.getMesFilieres().add(uneF);
-		System.out.println("\nUpdate success !");
 	}
 	
 	public void menu() {
@@ -77,23 +70,21 @@ public class Ecole {
 			System.out.println("\n------------ MENU ------------");
 			System.out.println("\n-- 1 - Saisir               --");
 			System.out.println("\n-- 2 - Afficher             --");
-			System.out.println("\n-- 3 - Ajouter une filiere  --");
-			System.out.println("\n-- 4 - Liste des filieres   --");
-			System.out.println("\n-- 5 - Gerer une filiere    --");
-			System.out.println("\n-- 6 - XML                  --");
+			System.out.println("\n-- 3 - Liste des filiere    --");
+			System.out.println("\n-- 4 - Gerer une filiere    --");
+			System.out.println("\n-- 5 - XML                  --");
 			System.out.println("\n-- 0 - Quitter              --");
 			System.out.println("\n------------------------------");
 			choix = Console.saisirInt();
 			switch (choix) {
 			case 1:	this.saisir(); break;
 			case 2: this.afficher(); break;
-			case 3: this.ajouter(); break;
-			case 4: System.out.println(this.toString()); break;
-			case 5: {
+			case 3: this.toString(); break;
+			case 4: {
 				System.out.println("\nVeuillez donnez le numero de la filiere a gerer : ");
 				this.getMesFilieres().get(Console.saisirInt()).menu();
 			}
-			case 6: System.out.println(this.toXml()); break;
+			case 5: this.toXml(); break;
 
 			default:
 				break;
@@ -103,7 +94,7 @@ public class Ecole {
 	
 	public static void main(String args[]) {
 		
-		Ecole uneEcole = new Ecole();
-		uneEcole.menu();
+		uneEcole = new Ecole();
+		uneEcole.
 	}
 }
