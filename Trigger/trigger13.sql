@@ -52,6 +52,29 @@ end if;
 END @@
 
 CREATE TRIGGER upMar
-BEFORE
+BEFORE UPDATE ON marier
+FOR EACH ROW
+BEGIN
+Declare s1 varchar;
+Daclare s2 varchar;
+
+if new.p1 = new.p2
+then
+	DELETE FROM marier WHERE 2 = 0;
+else
+	SELECT sexe into s1
+	FROM personne
+	where id_p = new.p1;
+
+	SELECT sexe into s2
+	FROM personne
+	WHERE id_p = new.p2;
+	
+	if s1 = s2
+	then
+		DELETE FROM marier where 2 = 0;
+	end if;
+end if;
+END @@
 
 Delimiter ;
