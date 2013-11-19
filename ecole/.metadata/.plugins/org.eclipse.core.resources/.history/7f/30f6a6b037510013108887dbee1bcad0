@@ -60,13 +60,6 @@ public class Groupe {
 		System.out.println("\nUpdate success !");
 	}
 	
-	public void listerEleves() {
-		System.out.println("\nListe des eleves : ");
-		for	(int i = 0; i < this.getMesEleves().size(); i++) {
-			this.getMesEleves().get(i).afficher();
-		}
-	}
-	
 	public void saisir() {
 		System.out.println("\nDonnez l'ID du groupe : ");
 		this.setIdGroupe(Console.saisirInt());

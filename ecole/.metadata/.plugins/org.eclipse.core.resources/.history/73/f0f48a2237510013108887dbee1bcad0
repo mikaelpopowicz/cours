@@ -53,20 +53,6 @@ public class Groupe {
 		this.setMesEleves(new LinkedList<Eleve>());
 	}
 	
-	public void ajouter() {
-		Eleve unE = new Eleve();
-		unE.saisir();
-		this.getMesEleves().add(unE);
-		System.out.println("\nUpdate success !");
-	}
-	
-	public void listerEleves() {
-		System.out.println("\nListe des eleves : ");
-		for	(int i = 0; i < this.getMesEleves().size(); i++) {
-			this.getMesEleves().get(i).afficher();
-		}
-	}
-	
 	public void saisir() {
 		System.out.println("\nDonnez l'ID du groupe : ");
 		this.setIdGroupe(Console.saisirInt());
@@ -84,7 +70,7 @@ public class Groupe {
 		System.out.println("Nombre d'eleves : " + this.getMesEleves().size());
 	}
 
-	public String toXml() {
+	String toXml() {
 		String xml = "";
 		xml += "\n\t\t\t<groupe>";
 		xml += "\n\t\t\t\t<nom>";
