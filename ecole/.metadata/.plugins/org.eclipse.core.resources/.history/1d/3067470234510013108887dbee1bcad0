@@ -70,7 +70,9 @@ public class Eleve {
 	
 	public String toString() {
 		String result = "";
-		result += "\n"+this.getNom() + " | " + this.getPrenom() + " | " + this.getNumCarte();
+		result += "\n"+this.getNom();
+		result += "\n"+this.getPrenom();
+		result += "\n"+this.getNumCarte();
 		return result;
 	}
 	

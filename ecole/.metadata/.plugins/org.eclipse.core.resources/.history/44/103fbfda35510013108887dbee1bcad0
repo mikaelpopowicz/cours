@@ -1,0 +1,34 @@
+import java.util.LinkedList;
+
+
+public class Groupe {
+
+	private String nom, salle;
+	private int idGroupe;
+	private LinkedList<Eleve> mesEleves;
+
+	public String getNom() {
+		return this.nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	
+	String toXml() {
+		String xml = "";
+		xml += "\n\t\t\t<groupe>";
+		xml += "\n\t\t\t\t<nom>";
+		xml += "\n\t\t\t\t\t"+this.getNom();
+		xml += "\n\t\t\t\t</nom>";
+		xml += "\n\t\t\t\t<salle>";
+		xml += "\n\t\t\t\t</salle>";
+		xml += "\n\t\t\t\t<id>";
+		xml += "\n\t\t\t\t</id>";
+		xml += "\n\t\t\t\t<eleves>";
+		xml += "\n\t\t\t\t</eleves>";
+		xml += "\n\t\t\t<groupe>";
+	}
+	
+}

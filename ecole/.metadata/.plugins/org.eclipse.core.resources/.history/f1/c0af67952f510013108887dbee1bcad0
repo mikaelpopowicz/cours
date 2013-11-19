@@ -1,0 +1,52 @@
+
+public class Eleve {
+
+	/**
+	 * Attributs de l'élève
+	 */
+	private String nom, prenom;
+	private int numCarte;
+	
+	
+	/**
+	 * Getters & Setters
+	 */
+	public String getNom() {
+		return this.nom;
+	}
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public String getPrenom() {
+		return this.prenom;
+	}
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+	public int getNumCarte() {
+		return this.numCarte;
+	}
+	public void setNumCarte(int numCarte) {
+		this.numCarte = numCarte;
+	}
+	
+	
+	
+	/**
+	 * Constructeur non surchargé
+	 */
+	Eleve() {
+		this.setNom("");
+		this.setPrenom("");
+		this.setNumCarte(0);
+	}
+	
+	Eleve(String nom, String prenom, int num) {
+		this.setNom(nom);
+		this.setPrenom(prenom);
+		this.setNumCarte(num);
+	}
+	
+	
+	
+}

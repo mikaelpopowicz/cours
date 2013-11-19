@@ -53,7 +53,7 @@ public class Eleve {
 		this.setNumCarte(num);
 	}
 	
-	public void saisir() {
+	void saisir() {
 		System.out.println("\nDonner le nom : ");
 		this.setNom(Console.saisirString());
 		System.out.println("\nDonner le prénom : ");
@@ -62,31 +62,4 @@ public class Eleve {
 		this.setNumCarte(Console.saisirInt());
 	}
 	
-	public void afficher() {
-		System.out.println("\nNom : " + this.getNom());
-		System.out.println("\nPrénom : " + this.getPrenom());
-		System.out.println("\nN° carte : " + this.getNumCarte());
-	}
-	
-	public String toString() {
-		String result = "";
-		result += "\n"+this.getNom() + " | " + this.getPrenom() + " | " + this.getNumCarte();
-		return result;
-	}
-	
-	public String toXml() {
-		String xml = "";
-		xml += "\n\t\t\t\t<eleve>";
-		xml += "\n\t\t\t\t\t<nom>";
-		xml += "\n\t\t\t\t\t\t"+this.getNom();
-		xml += "\n\t\t\t\t\t</nom>";
-		xml += "\n\t\t\t\t\t<prenom>";
-		xml += "\n\t\t\t\t\t\t"+this.getPrenom();
-		xml += "\n\t\t\t\t\t</prenom>";
-		xml += "\n\t\t\t\t\t<numcarte>";
-		xml += "\n\t\t\t\t\t\t"+this.getNumCarte();
-		xml += "\n\t\t\t\t\t</numcarte>";
-		xml += "\n\t\t\t\t</eleve>";
-		return xml;
-	}
 }

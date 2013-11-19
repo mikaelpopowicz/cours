@@ -70,23 +70,10 @@ public class Eleve {
 	
 	public String toString() {
 		String result = "";
-		result += "\n"+this.getNom() + " | " + this.getPrenom() + " | " + this.getNumCarte();
+		result += "\n"+this.getNom();
+		result += "\n"+this.getPrenom();
+		result += "\n"+this.getNumCarte();
 		return result;
 	}
 	
-	public String toXml() {
-		String xml = "";
-		xml += "\n\t\t\t\t<eleve>";
-		xml += "\n\t\t\t\t\t<nom>";
-		xml += "\n\t\t\t\t\t\t"+this.getNom();
-		xml += "\n\t\t\t\t\t</nom>";
-		xml += "\n\t\t\t\t\t<prenom>";
-		xml += "\n\t\t\t\t\t\t"+this.getPrenom();
-		xml += "\n\t\t\t\t\t</prenom>";
-		xml += "\n\t\t\t\t\t<numcarte>";
-		xml += "\n\t\t\t\t\t\t"+this.getNumCarte();
-		xml += "\n\t\t\t\t\t</numcarte>";
-		xml += "\n\t\t\t\t</eleve>";
-		return xml;
-	}
 }

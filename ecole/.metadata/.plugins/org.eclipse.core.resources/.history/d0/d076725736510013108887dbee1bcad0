@@ -52,17 +52,6 @@ public class Groupe {
 		this.setIdGroupe(id);
 		this.setMesEleves(new LinkedList<Eleve>());
 	}
-	
-	public void saisir() {
-		System.out.println("\nDonnez l'ID du groupe : ");
-	}
-	
-	public void afficher() {
-		System.out.println("\nId groupe : " + this.getIdGroupe());
-		System.out.println("\nNom : " + this.getNom());
-		System.out.println("Salle : " + this.getSalle());
-		System.out.println("Nombre d'eleves : " + this.getMesEleves().size());
-	}
 
 	String toXml() {
 		String xml = "";
@@ -76,7 +65,7 @@ public class Groupe {
 		xml += "\n\t\t\t\t</id>";
 		xml += "\n\t\t\t\t<eleves>";
 		for (int i = 0; i < this.mesEleves.size(); i++) {
-			xml += this.getMesEleves().get(i).toXml();
+			xml += this.getMesEleves()[i].toXml();
 		}
 		xml += "\n\t\t\t\t</eleves>";
 		xml += "\n\t\t\t<groupe>";
