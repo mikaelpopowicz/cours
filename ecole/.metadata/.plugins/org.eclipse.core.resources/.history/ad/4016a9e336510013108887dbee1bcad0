@@ -55,12 +55,6 @@ public class Groupe {
 	
 	public void saisir() {
 		System.out.println("\nDonnez l'ID du groupe : ");
-		this.setIdGroupe(Console.saisirInt());
-		System.out.println("\nDonnez le nom : ");
-		this.setNom(Console.saisirString());
-		System.out.println("\nDonnez la salle : ");
-		this.setSalle(Console.saisirString());
-		
 	}
 	
 	public void afficher() {
