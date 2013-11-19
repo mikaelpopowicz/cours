@@ -65,32 +65,7 @@ public class Filiere {
 	
 	public String toString() {
 		String result = "";
-		result += "\n\t\tFiliere " + this.getNom() + " (" + this.getDiplome() + ")";
-		for(int i = 0; i < this.getMesGroupes().size(); i++) {
-			result += this.getMesGroupes().get(i).toString();
-		}
-		return result;
-	}
-	
-	public String toXml() {
-		String xml = "";
-		xml += "\n\t\t<filiere>";
-		xml += "\n\t\t\t<nom>";
-		xml += "\n\t\t\t\t" + this.getNom();
-		xml += "\n\t\t\t</nom>";
-		xml += "\n\t\t\t<responsable>";
-		xml += "\n\t\t\t\t" + this.getResponsable();
-		xml += "\n\t\t\t</responsable>";
-		xml += "\n\t\t\t<diplome>";
-		xml += "\n\t\t\t\t" + this.getDiplome();
-		xml += "\n\t\t\t</diplome>";
-		xml += "\n\t\t\t<groupes>";
-		for(int i = 0; i < this.getMesGroupes().size(); i++) {
-			this.getMesGroupes().get(i).toXml();
-		}
-		xml += "\n\t\t\t</groupes>";
-		xml += "\n\t\t</filiere>";
-		return xml;
+		result += "\n\t\ Filiere " + this.getNom() + " (" + this.getDiplome() + ")";
 	}
 
 }

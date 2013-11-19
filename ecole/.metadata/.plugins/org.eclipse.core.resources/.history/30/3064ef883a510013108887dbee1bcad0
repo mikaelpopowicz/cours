@@ -1,0 +1,24 @@
+import java.util.LinkedList;
+
+
+public class Ecole {
+
+	
+	private String nom;
+	private LinkedList<Filiere> mesFilieres;
+	public String getNom() {
+		return this.nom;
+	}
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public LinkedList<Filiere> getMesFilieres() {
+		return this.mesFilieres;
+	}
+	public void setMesFilieres(LinkedList<Filiere> mesFilieres) {
+		this.mesFilieres = mesFilieres;
+	}
+	
+	
+	
+}

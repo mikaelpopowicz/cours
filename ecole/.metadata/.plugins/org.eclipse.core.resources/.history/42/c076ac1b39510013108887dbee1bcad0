@@ -1,0 +1,52 @@
+import java.util.LinkedList;
+
+
+public class Filiere {
+	
+	private String responsable, nom, diplome;
+	private LinkedList<Groupe> mesGroupes;
+	public String getResponsable() {
+		return this.responsable;
+	}
+	public void setResponsable(String responsable) {
+		this.responsable = responsable;
+	}
+	public String getNom() {
+		return this.nom;
+	}
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	public String getDiplome() {
+		return this.diplome;
+	}
+	public void setDiplome(String diplome) {
+		this.diplome = diplome;
+	}
+	public LinkedList<Groupe> getMesGroupes() {
+		return this.mesGroupes;
+	}
+	public void setMesGroupes(LinkedList<Groupe> mesGroupes) {
+		this.mesGroupes = mesGroupes;
+	}
+	
+	
+	
+	public Filiere() {
+		this.setNom("");
+		this.setResponsable("");
+		this.setDiplome("");
+		this.setMesGroupes(new LinkedList<Groupe>());
+	}
+	
+	public Filiere(String nom, String responsable, String diplome) {
+		this.setNom(nom);
+		this.setResponsable(responsable);
+		this.setDiplome(diplome);
+		this.setMesGroupes(new LinkedList<Groupe>());
+	}
+	
+	
+	
+
+}

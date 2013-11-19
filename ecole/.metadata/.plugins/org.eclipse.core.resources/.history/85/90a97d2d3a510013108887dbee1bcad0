@@ -88,9 +88,6 @@ public class Filiere {
 		for(int i = 0; i < this.getMesGroupes().size(); i++) {
 			this.getMesGroupes().get(i).toXml();
 		}
-		xml += "\n\t\t\t</groupes>";
-		xml += "\n\t\t</filiere>";
-		return xml;
 	}
 
 }

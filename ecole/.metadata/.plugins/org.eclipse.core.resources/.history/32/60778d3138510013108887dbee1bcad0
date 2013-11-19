@@ -84,15 +84,6 @@ public class Groupe {
 		System.out.println("Salle : " + this.getSalle());
 		System.out.println("Nombre d'eleves : " + this.getMesEleves().size());
 	}
-	
-	public String toString() {
-		String result = "";
-		result += "\n\tGroupe : " + this.getNom() + "(" + this.getIdGroupe() + ")";
-		for(int i = 0; i < this.getMesEleves().size(); i++) {
-			result += this.getMesEleves().get(i).toString();
-		}
-		return result;
-	}
 
 	public String toXml() {
 		String xml = "";

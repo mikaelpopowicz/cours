@@ -30,17 +30,5 @@ public class Ecole {
 		this.setMesFilieres(new LinkedList<Filiere>());
 	}
 	
-	public void saisir() {
-		System.out.println("\nDonnez le nom : ");
-		this.setNom(Console.saisirString());
-	}
-	
-	public void afficher() {
-		System.out.println("\nNom : " + this.getNom());
-	}
-	
-	public String toString() {
-		
-	}
 	
 }

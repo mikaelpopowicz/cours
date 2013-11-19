@@ -90,7 +90,6 @@ public class Filiere {
 		}
 		xml += "\n\t\t\t</groupes>";
 		xml += "\n\t\t</filiere>";
-		return xml;
 	}
 
 }
