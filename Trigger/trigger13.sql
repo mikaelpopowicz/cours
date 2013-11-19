@@ -29,8 +29,8 @@ CREATE TRIGGER verifMar
 BEFORE INSERT ON marier
 FOR EACH ROW
 BEGIN
-Declare s1 char;
-Declare s2 char;
+Declare s1 varchar;
+Declare s2 varchar;
 
 if new.p1 = new.p2
 then
