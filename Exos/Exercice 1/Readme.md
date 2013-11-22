@@ -7,11 +7,12 @@ On va créer une mini application qui va permettre de créer un client, d'affich
 
 ####Arborescence
 
-/poo1(dossier racine)
-|__ index.php
-|__ Client.class.php
-|__ thread.php
-
+```
+poo1/ (dossier racine)
+├── index.php
+├── Client.class.php
+├── thread.php
+``
 
 ####Rôle des fichiers
 
