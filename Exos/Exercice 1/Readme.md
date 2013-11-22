@@ -5,7 +5,7 @@
 On va créer une mini application qui va permettre de créer un client, d'afficher les informations de ce client, de le modifer et de le supprimer
 
 
-####Arborescence
+###Arborescence
 
 ```
 poo1/ (dossier racine)
@@ -14,15 +14,15 @@ poo1/ (dossier racine)
 ├── thread.php
 ```
 
-####Rôle des fichiers
+###Rôle des fichiers
 
-##### - Client.class.php
+####		- [Client.class.php]()
 Il contiendra la classe Client, avec ses attributs et ses méthodes.
 
-##### - index.php
+####		- [index.php]()
 Fichier principal, contiendra l'affichage des informations ainsi qu'un formulaire pour modifier un client, si il existe, ou en créer un.
 
-##### - thread.php
+####		- [thread.php]()
 Fichier de traitement du formulaire
 
 Bon courage
