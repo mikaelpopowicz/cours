@@ -12,7 +12,7 @@ poo1/ (dossier racine)
 ├── index.php
 ├── Client.class.php
 ├── thread.php
-``
+```
 
 ####Rôle des fichiers
 
