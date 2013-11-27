@@ -1,4 +1,4 @@
-## [Exercicen 2 - POO]()
+## [Exercice 2 - POO]()
 
 ###Introduction
 
