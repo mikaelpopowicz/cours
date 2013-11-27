@@ -52,6 +52,7 @@ Exemple :
 <form action="fichier_de_traitement.php" method="post">
 	<label for="monChamps">Champs 1</label>
 	<input id="monChamps" name="champs_1" type="text" placeholder="Quelque chose" />
+	<input type="submit" name="valider" />
 </form>
 
 <?php
