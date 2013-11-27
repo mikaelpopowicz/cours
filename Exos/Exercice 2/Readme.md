@@ -21,7 +21,7 @@ poo2/ (dossier racine)
 ###Rôle des fichiers
 
 ####		- [compte.class.php]()
-Il contiendra la classe compte, avec ses attributs et ses méthodes.
+Il contiendra la classe compte, avec ses attributs et ses méthodes. Il conviendra de créer un constructeur, pour mettre tous les attribut à 0 ou vide pour les chaines de caractères. Il faudra aussi créer tous les getters & setters.
 
 ####		- [index.php]()
 Fichier principal, contiendra l'affichage des informations ainsi qu'un formulaire ou l'accès au différents formulaires pour modifier le compte.
