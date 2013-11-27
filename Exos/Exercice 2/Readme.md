@@ -31,4 +31,35 @@ Créer ses propres fichiers de traitements pour les divers formulaires
 
 Au vu de l'exercie, dans un premier temps, il faut se concentrer sur la page principale qui affichera les informations du compte. Pourquoi pas faire un menu haut dans la page pour acceder aux autres services (modification du compte, retrait, dépôt)
 
+
+###Méthode
+
+####Modifier l'objet
+Nous avons vu dans nos classes comment coder les Setters et Getters.
+Lorsque l'on veut affciher un attribut nous utilision un getters : exemple php
+
+```
+<?php
+echo $monObjet->getMonAttribut();
+?>
+```
+
+Pour la modification, cela n'est guere plus compliqué, il faut utiliser un formulaire et récupérer le contenu de la variable $_POST ou $_GET
+
+Exemple :
+```
+<!-- Formulaire html -->
+<form action="fichier_de_traitement.php" method="post">
+	<label for="monChamps">Champs 1</label>
+	<input id="monChamps" name="champs_1" type="text" placeholder="Quelque chose" />
+</form>
+
+<?php
+// Traitement
+if(isset($_POST['champs_1']) && !empty($_POST['champs_1'])) {
+	$monObjet->setMonAttribut($_POST['champs_1']);
+}
+?>
+```
+
 Bon courage
