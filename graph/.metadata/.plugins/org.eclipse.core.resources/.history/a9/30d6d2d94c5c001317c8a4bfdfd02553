@@ -1,0 +1,36 @@
+
+public class Luxe extends Produit {
+	
+	
+	private int note; //De 1 ˆ 5
+
+	
+	public Luxe() {
+		super();
+		this.setNote(0);
+	}
+	
+	public Luxe(String ref, String nom, double prix, double prixF, int note) {
+		super(ref, nom, prix, prixF);
+		this.setNote(note);
+		this.setPrixFinal(prix*(1+(note/10)));
+		double test = note/10;
+		System.out.println(""+test);
+	}
+	
+	public void setNote(int note) {
+		this.note = note;
+	}
+	
+	public int getNote() { return this.note; }
+	
+	public String toString() {
+		String chaine = super.toString();
+		
+		chaine += "\nNote : "+this.getNote();
+		chaine += "\nPrix final : "+this.getPrixFinal();
+		
+		return chaine;
+	}
+
+}

@@ -1,0 +1,28 @@
+package Panels;
+
+import java.awt.LayoutManager;
+
+import javax.swing.JPanel;
+
+public class DashBoard extends JPanel {
+
+	public DashBoard() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public DashBoard(LayoutManager layout) {
+		super(layout);
+		// TODO Auto-generated constructor stub
+	}
+
+	public DashBoard(boolean isDoubleBuffered) {
+		super(isDoubleBuffered);
+		// TODO Auto-generated constructor stub
+	}
+
+	public DashBoard(LayoutManager layout, boolean isDoubleBuffered) {
+		super(layout, isDoubleBuffered);
+		// TODO Auto-generated constructor stub
+	}
+
+}

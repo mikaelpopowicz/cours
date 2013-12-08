@@ -1,0 +1,19 @@
+
+public class Luxe extends Produit {
+	
+	
+	private int note; //De 1 ˆ 5
+
+	
+	public Luxe() {
+		super();
+		
+	}
+	
+	public void setNote(int note) {
+		this.note = note;
+	}
+	
+	public int getNote() { return this.note; }
+
+}

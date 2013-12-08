@@ -1,0 +1,8 @@
+
+public class Luxe extends Produit {
+
+	public Luxe() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

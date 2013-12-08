@@ -1,0 +1,58 @@
+
+public enum ListProd {
+
+	A1("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	A2("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	A3("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	A4("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	A5("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	A6("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	A7("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	A8("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	A9("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	B1("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	B2("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	B3("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	B4("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	B5("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	B6("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	B7("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	B8("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	B9("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	C1("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	C2("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	C3("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	C4("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	C5("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	C6("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	C7("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	C8("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0),
+	C9("HLEKF", "Nom", "Luxe", 199.95, 4, false, 0, 0);
+	
+	
+	private String ref, name, cat;
+	private double prix, note;
+	private boolean solde;
+	private double percent, pourri;
+	
+	ListProd(String ref, String name, String cat, double prix, double note, boolean solde, double percent, double pourri) {
+		this.ref = ref;
+		this.name = name;
+		this.cat = cat;
+		this.prix = prix;
+		this.note = note;
+		this.solde = solde;
+		this.percent = percent;
+		this.pourri = pourri;
+	}
+	
+	public String getRef() { return this.ref; }
+	public String getName() { return this.name; }
+	public String getCat() { return this.cat; }
+	public double getPrix() { return this.prix; }
+	public double getNote() { return this.note; }
+	public boolean getSolde() { return this.solde; }
+	public double getPercent() { return this.percent; }
+	public double getPourri() { return this.pourri; }
+	
+}

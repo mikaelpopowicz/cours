@@ -1,0 +1,21 @@
+
+public enum ListProd {
+
+	TEST("Nom", "Luxe", 199.95, 4, false, 0, 0);
+	
+	private String name, cat;
+	private double prix, note;
+	private boolean solde;
+	private double percent, pourri;
+	
+	ListProd(String name, String cat, double prix, double note, boolean solde, double percent, double pourri) {
+		this.name = name;
+		this.cat = cat;
+		this.prix = prix;
+		this.note = note;
+		this.solde = solde;
+		this.percent = percent;
+		this.pourri = pourri;
+	}
+	
+}

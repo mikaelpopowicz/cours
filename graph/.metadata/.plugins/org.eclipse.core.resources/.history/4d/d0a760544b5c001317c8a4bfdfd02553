@@ -1,0 +1,51 @@
+
+public abstract class Produit {
+
+	private String ref;
+	private String nom;
+	private double prixBase;
+	
+	public Produit() {
+		this.setRef("");
+		this.setNom("");
+		this.setPrixBase(0);
+	}
+	
+	public Produit(String ref, String nom, double prix) {
+		this.setRef(ref);
+		this.setNom(nom);
+		this.setPrixBase(prix);
+	}
+	
+	public void setRef(String ref) {
+		this.ref = ref;
+	}
+	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	public void setPrixBase(double prixBase) {
+		this.prixBase = prixBase;
+	}
+	
+	public String getRef() { return this.ref; }
+	public String getNom() { return this.nom; }
+	public double getPrixBase() { return this.prixBase; }
+	
+	
+	public String toString() {
+		String chaine = "";
+		
+		chaine += "\nProduit n¡ : "+this.getRef()+"\n";
+		int temp = chaine.length();
+		for(int i = 0; i < temp; i++) {
+			chaine += "-";
+		}
+		chaine += "\nNom : "+this.getNom();
+		chaine += "\nPrix de base : "+this.getPrixBase();
+		
+		return chaine;
+	}
+	
+}

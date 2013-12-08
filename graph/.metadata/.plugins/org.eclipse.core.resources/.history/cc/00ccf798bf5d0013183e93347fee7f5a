@@ -1,0 +1,24 @@
+import java.util.LinkedList;
+
+import javax.swing.JMenuBar;
+
+
+public class MyMenu extends JMenuBar {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
+	private LinkedList<JMenu> menus = new LinkedList<JMenu>();
+
+	public MyMenu() {
+		initMyMenu();
+	}
+	
+	public void initMyMenu() {
+		
+	}
+
+}

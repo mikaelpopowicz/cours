@@ -1,0 +1,13 @@
+
+public class AppConsole {
+	
+	private Magasin magasin = new Magasin();
+
+	public AppConsole() {
+	}
+	
+	public static void main(String args[]) {
+		AppConsole uneApp = new AppConsole();
+	}
+
+}

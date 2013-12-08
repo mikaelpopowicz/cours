@@ -1,0 +1,10 @@
+import javax.swing.JMenuBar;
+
+
+public class MyMenu extends JMenuBar {
+
+	public MyMenu() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

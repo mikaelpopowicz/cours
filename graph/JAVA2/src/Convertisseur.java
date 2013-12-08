@@ -1,15 +1,15 @@
-import java.awt.Color;
-
-import java.awt.TextField;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.LinkedList;
 
 import javax.swing.*;
 
 
 @SuppressWarnings("serial")
-public class Convertisseur extends JFrame implements ActionListener{
+public class Convertisseur extends JFrame implements ActionListener, KeyListener{
 
 	private LinkedList<String> lesdevises = new LinkedList<String>();
 	
@@ -31,7 +31,7 @@ public class Convertisseur extends JFrame implements ActionListener{
 	/**
 	 * Zone de texte
 	 */
-	private TextField montant = new TextField();
+	private JTextField montant = new JTextField();
 	
 	/**
 	 * Constante du taux de change
@@ -55,21 +55,32 @@ public class Convertisseur extends JFrame implements ActionListener{
 	 */
 	private JComboBox devise = new JComboBox();
 	
+	Toolkit outil = getToolkit();
 	
+	
+	
+	/**
+	 * Constructeur
+	 */
 	public Convertisseur() {
+		this.setSize((int)getToolkit().getScreenSize().getWidth(), ((int)getToolkit().getScreenSize().getHeight() - 100));
+		//this.setSize(420, 290);
 		
-		
-		this.setBounds(200, 200, 420, 290);
+		this.setLocationRelativeTo(null);
+		//this.setBounds(200, 200, 420, 290);
+		this.setAlwaysOnTop(true);
+		//this.setUndecorated(true);
 		this.setLayout(null);
 		this.setTitle("Mon convertisseur");
 		this.setResizable(false);
 		titre.setBounds(50, 20, 250, 20);
 		this.add(titre);
 		euro.setBounds(50, 60, 60, 60);
-		euro.addActionListener(this);
-		euro.setBackground(Color.BLUE);
+		euro.addKeyListener(this);
+		euro.setOpaque(true);
 		this.add(euro);
 		montant.setBounds(125, 120, 50, 20);
+		montant.addActionListener(this);
 		this.add(montant);
 		monnaie.setBounds(185, 120, 20, 20);
 		this.add(monnaie);
@@ -87,6 +98,7 @@ public class Convertisseur extends JFrame implements ActionListener{
 		this.add(exit);
 		
 		devise.setBounds(285, 60, 135, 30);
+		devise.addActionListener(this);
 		this.add(devise);
 		
 		/**
@@ -155,6 +167,11 @@ public class Convertisseur extends JFrame implements ActionListener{
 			JOptionPane.showMessageDialog(this, "Le taux est de "+this.getTaux(), "Taux", JOptionPane.INFORMATION_MESSAGE);
 		} else if(e.getSource() == dv || e.getSource() == dvItem) {
 			this.toDevise();
+		} else if(e.getSource() == devise) {
+			String tab[] = new String[3];
+			String chaine = devise.getSelectedItem().toString();
+			tab = chaine.split(" - ");
+			this.monnaie.setText(tab[2]);
 		}
 	}
 	
@@ -190,6 +207,28 @@ public class Convertisseur extends JFrame implements ActionListener{
 		if(retour == 0) {
 			this.dispose();
 		}
+	}
+
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		
+	}
+
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+
+			this.monnaie.setText(this.montant.getText()+e.getKeyChar());
+		
+		
+	}
+
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		
+		
 	}
 	
 }

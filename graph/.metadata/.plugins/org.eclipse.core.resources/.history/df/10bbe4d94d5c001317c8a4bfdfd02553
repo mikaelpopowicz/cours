@@ -1,0 +1,13 @@
+
+public class Moyen extends Produit {
+
+	public Moyen() {
+		super();
+	}
+
+	public Moyen(String ref, String nom, double prix, double prixF) {
+		super(ref, nom, prix, prixF);
+		// TODO Auto-generated constructor stub
+	}
+
+}

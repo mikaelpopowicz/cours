@@ -1,0 +1,31 @@
+import java.io.IOException;
+
+
+public class AppConsole {
+	
+	private Magasin magasin = new Magasin();
+
+	public AppConsole() {
+		initMagasin();
+	}
+	
+	public void initMagasin() {
+		try {
+			Runtime.getRuntime().exec("clear");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("Bienvenue dans l'application, veuillez effectuer la configuration initiale\n");
+		System.out.println("\nNom du magasin : ");
+		this.magasin.setName(Console.saisirString());
+		
+		
+	}
+	
+	public static void main(String args[]) {
+		AppConsole uneApp = new AppConsole();
+		uneApp.magasin.menu();
+	}
+
+}
