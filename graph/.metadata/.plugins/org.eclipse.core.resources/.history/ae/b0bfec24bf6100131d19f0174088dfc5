@@ -1,0 +1,35 @@
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+
+public class GestionCasse extends JFrame {
+
+	private Casse maCasse;
+	private JPanel container = new JPanel(new BorderLayout());
+	
+	
+	public GestionCasse() {
+		this.setMaCasse(null);
+		this.setTitle("Gestion de la casse");
+	}
+	
+	public GestionCasse(Casse uneCasse) {
+		this.setMaCasse(uneCasse);
+	}
+	
+	
+	public Casse getMaCasse() { return this.maCasse; }
+	
+	public void setMaCasse(Casse uneCasse) {
+		this.maCasse = uneCasse;
+	}
+
+	
+	public static void main(String args[]) {
+		
+		
+	}
+	
+}

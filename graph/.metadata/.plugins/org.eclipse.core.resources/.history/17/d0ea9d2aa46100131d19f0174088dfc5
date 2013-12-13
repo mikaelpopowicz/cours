@@ -1,0 +1,29 @@
+
+public class Constructeur {
+
+	private String nom, pays, statut;
+	
+	public Constructeur() {
+		this.setNom("");
+		this.setPays("");
+		this.setStatut("");
+	}
+
+	
+	public String getNom() { return this.nom; }
+	public String getPays() { return this.pays; }
+	public String getStatut() { return this.statut; }
+	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	public void setPays(String pays) {
+		this.pays = pays;
+	}
+	
+	public void setStatut(String statut) {
+		this.statut = statut;
+	}
+	
+}

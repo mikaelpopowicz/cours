@@ -1,0 +1,17 @@
+
+public class GestionCasse {
+
+	private Casse maCasse;
+	
+	public GestionCasse() {
+		this.setMaCasse(null);
+	}
+	
+	
+	public Casse getMaCasse() { return this.maCasse; }
+	
+	public void setMaCasse(Casse uneCasse) {
+		this.maCasse = uneCasse;
+	}
+
+}

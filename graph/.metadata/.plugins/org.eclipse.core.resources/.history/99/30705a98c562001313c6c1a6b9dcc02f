@@ -1,0 +1,15 @@
+package Application;
+
+import java.util.LinkedList;
+
+import Entities.Vehicule;
+
+public class CasseController {
+
+	private LinkedList<Vehicule> vehicules = new LinkedList<Vehicule>();
+	
+	public CasseController() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

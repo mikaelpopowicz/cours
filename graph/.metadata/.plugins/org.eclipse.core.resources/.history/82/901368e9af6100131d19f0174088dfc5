@@ -1,0 +1,47 @@
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.LinkedList;
+
+
+public class Casse {
+
+	private LinkedList<Vehicule> lesVehicules;
+	
+	public Casse() {
+		this.lesVehicules = new LinkedList<Vehicule>();
+	}
+	
+	public void ajouter(Vehicule unVehicule) {
+		this.lesVehicules.add(unVehicule);
+	}
+	
+	public void setLesVehicules(LinkedList<Vehicule> liste) {
+		this.lesVehicules = liste;
+	}
+	
+	public LinkedList<Vehicule> getLesVehicules() { return this.lesVehicules; }
+	
+	
+	
+	public void chargerVehicules() {
+		BDD uneBDD = new BDD("localhost", "casse", "root", "toor");
+		String requete = "SELECT * FROM vehicule;";
+		try {
+			uneBDD.seConnecter();
+			Statement unState = uneBDD.getMaConnexion().createStatement();
+			ResultSet unRes = unState.executeQuery(requete);
+			while (unRes.next()) {
+				String matricule = unRes.getString("matricule");
+				String couleur = unRes.getString("couleur");
+				int nbKm = unRes.getInt("km");
+				int id_const = unRes.getInt("id_const");
+				Vehicule unV = new Vehicule(matricule, couleur, nbKm, id_const);
+				this.getLesVehicules().add(unV);
+			}
+		} catch (SQLException e) {
+			System.out.println("Erreur de chargement");
+		}
+	}
+	
+}

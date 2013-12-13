@@ -1,0 +1,24 @@
+import java.util.LinkedList;
+
+
+public class Casse {
+
+	private LinkedList<Vehicule> lesVehicules;
+	
+	public Casse() {
+		this.lesVehicules = new LinkedList<Vehicule>();
+	}
+	
+	public void ajouter(Vehicule unVehicule) {
+		this.lesVehicules.add(unVehicule);
+	}
+	
+	public void setLesVehicules(LinkedList<Vehicule> liste) {
+		this.lesVehicules = liste;
+	}
+	
+	
+	
+	
+	
+}

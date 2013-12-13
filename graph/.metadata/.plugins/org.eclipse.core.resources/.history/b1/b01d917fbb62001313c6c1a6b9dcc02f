@@ -1,0 +1,24 @@
+package Library;
+
+import java.util.LinkedList;
+
+import Entities.Vehicule;
+
+public class VehiculeManager extends Manager {
+	
+	public VehiculeManager(BDD uneBdd) {
+		super(uneBdd);
+	}
+
+	public void add(Vehicule veh) {
+		
+	}
+	
+	public LinkedList<Vehicule> getList() {
+		this.getConnexion().seConnecter();
+		
+		
+	}
+		
+
+}

@@ -1,0 +1,12 @@
+import java.util.LinkedList;
+
+
+public class Casse {
+
+	private LinkedList<Vehicule> lesVehicules;
+	
+	public Casse() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

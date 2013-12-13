@@ -1,0 +1,19 @@
+package Library;
+
+public class Manager {
+
+	private BDD connexion;
+	private String sql;
+	
+	public Manager(BDD uneBdd) {
+		this.setConnexion(uneBdd);
+		this.setSql(sql);
+	}
+	
+	public BDD getConnexion() { return this.connexion; }
+	
+	public void setConnexion(BDD uneBdd) {
+		this.connexion = uneBdd;
+	}
+
+}

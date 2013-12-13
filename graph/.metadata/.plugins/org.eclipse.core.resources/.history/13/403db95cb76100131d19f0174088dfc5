@@ -1,0 +1,88 @@
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.LinkedList;
+
+
+public class Casse {
+
+	private LinkedList<Vehicule> lesVehicules;
+	
+	public Casse() {
+		this.lesVehicules = new LinkedList<Vehicule>();
+	}
+	
+	public void ajouter(Vehicule unVehicule) {
+		this.lesVehicules.add(unVehicule);
+	}
+	
+	public void setLesVehicules(LinkedList<Vehicule> liste) {
+		this.lesVehicules = liste;
+	}
+	
+	public LinkedList<Vehicule> getLesVehicules() { return this.lesVehicules; }
+	
+	
+	
+	public void chargerVehicules() {
+		BDD uneBDD = new BDD("localhost", "casse", "root", "toor");
+		String requete = "SELECT * FROM vehicule;";
+		try {
+			uneBDD.seConnecter();
+			Statement unState = uneBDD.getMaConnexion().createStatement();
+			ResultSet unRes = unState.executeQuery(requete);
+			while (unRes.next()) {
+				String matricule = unRes.getString("matricule");
+				String couleur = unRes.getString("couleur");
+				int nbKm = unRes.getInt("km");
+				int id_const = unRes.getInt("id_const");
+				Vehicule unV = new Vehicule(matricule, couleur, nbKm, id_const);
+				this.lesVehicules.add(unV);
+			}
+			uneBDD.seDeconnecter();
+			unState.close();
+			unRes.close();
+		} catch (SQLException e) {
+			System.out.println("Erreur de chargement");
+		}
+	}
+	
+	public void supprimer(String matricule) {
+		BDD uneBDD = new BDD("localhost", "casse", "root", "toor");
+		String requete = "DELETE FROM vehicule WHERE matricule = '"+matricule+"';";
+		try {
+			uneBDD.seConnecter();
+			Statement unState = uneBDD.getMaConnexion().createStatement();
+			if(unState.execute(requete)) {
+				System.out.println("\nLa suppression à été effectuée avec succès !");
+			} else {
+				System.out.println("\nAucun élément n'a été supprimé car aucun n'a pour matricule : "+matricule);
+			}
+			uneBDD.seDeconnecter();
+			unState.close();
+		} catch (SQLException exp) {
+			System.out.println("La suppression n'a pas fonctionnée :"+exp.getMessage());
+		}
+	}
+	
+	public void ajouter(String matricule, String couleur, int km, int id_const) {
+		BDD uneBDD = new BDD("localhost", "casse", "root", "toor");
+		String requete = "INSERT INTO vehicule VALUES('', '"+id_const+"', '"+matricule+"', '"+couleur+"', '"+km+"');";
+		try {
+			
+		} catch (SQLException exp) {
+			// TODO: handle exception
+		}
+	}
+	
+	public String toString() {
+		String temp = "";
+		
+		for(Vehicule unV : this.getLesVehicules()) {
+			temp += unV.toString();
+		}
+		
+		return temp;
+	}
+	
+}

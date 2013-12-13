@@ -1,0 +1,9 @@
+package Library;
+
+public class VehiculeManager {
+
+	public VehiculeManager() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

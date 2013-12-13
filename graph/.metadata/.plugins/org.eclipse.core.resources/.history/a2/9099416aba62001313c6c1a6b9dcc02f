@@ -1,0 +1,11 @@
+package Library;
+
+public class Manager {
+
+	private BDD connexion;
+	
+	public Manager() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

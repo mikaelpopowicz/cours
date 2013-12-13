@@ -1,0 +1,9 @@
+package Application;
+
+public class CasseController {
+
+	public CasseController() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

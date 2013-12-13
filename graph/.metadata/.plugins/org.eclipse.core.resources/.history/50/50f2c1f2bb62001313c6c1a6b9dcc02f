@@ -1,0 +1,36 @@
+package Library;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.LinkedList;
+
+import Entities.Vehicule;
+
+public class VehiculeManager extends Manager {
+	
+	public VehiculeManager(BDD uneBdd) {
+		super(uneBdd);
+	}
+
+	public void add(Vehicule veh) {
+		
+	}
+	
+	public LinkedList<Vehicule> getList() {
+		LinkedList<Vehicule> liste = new LinkedList<Vehicule>();
+		this.setSql("SELECT * FROM vehicule;");
+		try {
+			this.getConnexion().seConnecter();
+			Statement state = this.getConnexion().getMaConnexion().createStatement();
+			ResultSet result = state.executeQuery(this.getSql());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return liste;
+	}
+		
+
+}

@@ -1,0 +1,51 @@
+
+public class BDD {
+
+	private String host, dbname, user, pass;
+	
+	
+	public BDD() {
+		this.setHost("");
+		this.setDbname("");
+		this.setUser("");
+		this.setPass("");
+	}
+	
+	public BDD(String host, String db, String user, String pass) {
+		this.setHost(host);
+		this.setDbname(db);
+		this.setUser(user);
+		this.setPass(pass);
+	}
+
+	
+	public String getHost() { return this.host; }
+	public String getDbname() { return this.dbname; }
+	public String getUser() { return this.user; }
+	public String getPass() { return this.pass; }
+	
+	public void setHost(String host) {
+		this.host = host;
+	}
+	
+	public void setDbname(String db) {
+		this.dbname = db;
+	}
+	
+	public void setUser(String user) {
+		this.user = user;
+	}
+	
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+	
+	public void chargerPilote() {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException exp) {
+			System.out.println("Erreur du chargement du pilote");
+		}
+	}
+	
+}
