@@ -1,0 +1,24 @@
+import java.util.LinkedList;
+
+
+
+public class Projet {
+	
+	private String nom;
+	private Date debut, fin;
+	private float prixFactureMO;
+	private LinkedList<Mission> missions;
+
+	public Projet() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	private float cumulCoutMO() {
+		float cumul = 0;
+		
+		
+		return cumul;
+	}
+
+	
+}

@@ -1,0 +1,104 @@
+import java.util.LinkedList;
+
+
+public class Projet {
+	
+	private String nom;
+	private Date debut, fin;
+	private float prixFactureMO;
+	private LinkedList<Mission> missions;
+
+	public Projet() {
+		this.setNom("");
+		this.setDebut(new Date());
+		this.setFin(new Date());
+		this.setPrixFactureMO(0);
+		this.setMissions(new LinkedList<Mission>());
+	}
+	
+	public Projet(String nom, Date debut, Date fin, float prix, LinkedList<Mission> missions) {
+		this.setNom(nom);
+		this.setDebut(debut);
+		this.setFin(fin);
+		this.setPrixFactureMO(prix);
+		this.setMissions(missions);
+	}
+	
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	public void setDebut(Date debut) {
+		this.debut = debut;
+	}
+	
+	public void setFin(Date fin) {
+		this.fin = fin;
+	}
+	
+	public void setPrixFactureMO(float prix) {
+		this.prixFactureMO = prix;
+	}
+	
+	public void setMissions(LinkedList<Mission> missions) {
+		this.missions = missions;
+	}
+	
+	public String getNom() { return this.nom; }
+	public Date getDebut() { return this.debut; }
+	public Date getFin() { return this.fin; }
+	public float getPrixFactureMO() { return this.prixFactureMO; }
+	public LinkedList<Mission> getMissions() { return this.missions; }
+	
+	
+	
+	
+	private float cumulCoutMO() {
+		float cumul = 0, taux;
+		int nbh;
+		for(int i = 0; i < this.missions.size(); i++) {
+			nbh = this.missions.get(i).nbHeuresEffectuees();
+			taux = this.missions.get(i).getExecutant().getTauxHoraire();
+			cumul += nbh * taux;
+		}		
+		return cumul;
+	}
+	
+	public float margeBruteCourante() {
+		return this.prixFactureMO - this.cumulCoutMO();
+	}
+	
+	public boolean supprimer_mission(Mission uneM) {
+		boolean result;
+		if(this.missions.contains(uneM)) {
+			this.missions.remove(uneM);
+			result = true;
+		} else {
+			result = false;
+		}
+		return result;
+	}
+	
+	public LinkedList<Mission> les_missions_max_heures(int nbh) {
+		LinkedList<Mission> lesMissions = new LinkedList<Mission>();
+		for(Mission uneM : this.missions) {
+			if (uneM.nbHeuresEffectuees() > nbh) {
+				lesMissions.add(uneM);
+			}
+		}
+		return lesMissions;
+	}
+	
+	public String intervenant_max_heures() {
+		int test = 0, index = 0;
+		for(Mission uneM : this.missions) {
+			if(uneM.nbHeuresEffectuees() > test) {
+				test = uneM.nbHeuresEffectuees();
+				index = this.missions.indexOf(uneM);
+			}
+		}
+		return this.missions.get(index).getExecutant().getNom();
+	}
+	
+}

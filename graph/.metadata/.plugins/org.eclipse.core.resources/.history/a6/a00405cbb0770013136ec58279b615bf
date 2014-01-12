@@ -1,0 +1,29 @@
+package Entities;
+
+public class Intervenant {
+
+	private String nom;
+	private float tauxHoraire;
+	
+	public Intervenant() {
+		this.setNom("");
+		this.setTauxHoraire(0);
+	}
+	
+	public Intervenant(String nom, flaot taux) {
+		this.setNom(nom);
+		this.setTauxHoraire(taux);
+	}
+
+	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	public void setTauxHoraire(float taux) {
+		this.tauxHoraire = taux;
+	}
+	
+	public String getNom() { return this.nom; }
+	public float getTauxHoraire() { return this.tauxHoraire; }
+}

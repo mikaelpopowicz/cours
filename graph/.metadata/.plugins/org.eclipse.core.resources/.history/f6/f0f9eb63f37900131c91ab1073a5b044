@@ -1,0 +1,20 @@
+import java.util.LinkedList;
+
+
+public class Soft {
+
+	private String nom;
+	private LinkedList<Projet> lesProjets = new LinkedList<Projet>();
+	
+	public Soft() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	public String getNom() { return this.nom; }
+	public LinkedList<Projet> getLesProjets() { return this.lesProjets; }
+
+}

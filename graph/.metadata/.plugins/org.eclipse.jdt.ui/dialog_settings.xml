@@ -30,12 +30,13 @@
 		<item value="2" key="pageIndex"/>
 	</section>
 	<section name="FatJarPackageWizard">
-		<item value="/Users/Mikael/Desktop/convertisseur.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
-		<item value="Convertisseur (3) - convertisseur" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
+		<item value="/Users/Mikael/Desktop/test-soft.jar" key="FatJarPackageWizardPage.DESTINATION_PATH_SELECTION"/>
+		<item value="Soft - MissionSoft" key="FatJarPackageWizardPage.LAUNCH_CONFIGURATION_SELECTION_NAME"/>
 		<item value="/Applications/MAMP/htdocs/cours/graph" key="FatJarPackageWizardPage.ANTSCRIPT_LOCATION"/>
 		<item value="false" key="FatJarPackageWizardPage.ANTSCRIPT_SAVE"/>
-		<item value="1" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
+		<item value="3" key="FatJarPackageWizardPage.LIBRARY_HANDLING"/>
 		<list key="FatJarPackageWizardPage.DESTINATION_NAMES_ID">
+			<item value="/Users/Mikael/Desktop/test-soft.jar"/>
 			<item value="/Users/Mikael/Desktop/convertisseur.jar"/>
 			<item value="/Users/Mikael/Desktop/conv.jar"/>
 		</list>

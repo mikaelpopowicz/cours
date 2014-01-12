@@ -15,10 +15,8 @@ public class VehiculeManager extends Manager {
 
 	public void add(Vehicule veh) {
 		// Requête d'insertion
-		this.setSql("INSERT INTO vehicule " +
-				"(id_const ,matricule, couleur, km) VALUES " +
-				"("+veh.getId_const()+",'"+veh.getMatricule()+"','"+veh.getCouleur()+"',"+veh.getNbKm()+";");
-		
+		this.setSql("INSERT INTO vehicule (id_const ,matricule, couleur, km) VALUES " +
+				"("+veh.getId_const()+",'"+veh.getMatricule()+"','"+veh.getCouleur()+"',"+veh.getNbKm()+");");
 		try {
 			// Connexion à la BDD
 			this.getConnexion().seConnecter();
@@ -32,7 +30,7 @@ public class VehiculeManager extends Manager {
 			state.close();
 		
 		} catch (SQLException e) {
-			//
+			System.out.println("Erreur : "+e.getMessage());
 		}
 	}
 	
@@ -69,6 +67,19 @@ public class VehiculeManager extends Manager {
 		}
 		
 		return liste;
+	}
+	
+	public void del(Vehicule veh) {
+		this.setSql("DELETE FROM vehicule WHERE id_veh = '"+veh.getId()+"';");
+		try {
+			this.getConnexion().seConnecter();
+			Statement unState = this.getConnexion().getMaConnexion().createStatement();
+			unState.execute(this.getSql());
+			this.getConnexion().seDeconnecter();
+			unState.close();
+		} catch (SQLException exp) {
+			System.out.println("La suppression n'a pas fonctionnée :"+exp.getMessage());
+		}
 	}
 		
 

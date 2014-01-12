@@ -1,0 +1,63 @@
+
+
+import java.util.HashMap;
+
+public class Mission {
+
+	private String nom, description;
+	private int nbHeuresPrevues;
+	private HashMap<Date, Integer> releveHoraire;
+	
+	public Mission() {
+		this.setNom("");
+		this.setDescription("");
+		this.setNbHeuresPrevues(0);
+		this.setReleveHoraire(new HashMap<Date, Integer>());
+	}
+	
+	public Mission(String nom, String desc, int nbh, HashMap<Date, Integer> releve) {
+		this.setNom(nom);
+		this.setDescription(desc);
+		this.setNbHeuresPrevues(nbh);
+		this.setReleveHoraire(releve);
+	}
+	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	public void setDescription(String desc) {
+		this.description = desc;
+	}
+	
+	public void setNbHeuresPrevues(int nbh) {
+		this.nbHeuresPrevues = nbh;
+	}
+	
+	public void setReleveHoraire(HashMap<Date, Integer> releve) {
+		this.releveHoraire = releve;
+	}
+	
+	public String getNom() { return this.nom; }
+	public String getDescription() { return this.description; }
+	public int getNbHeuresPrevues() { return this.nbHeuresPrevues; }
+	public HashMap<Date, Integer> getReleveHoraire() { return this.releveHoraire; }
+	
+	public void ajoutReleve(Date uneDate, int nbh) {
+		if (this.releveHoraire.containsKey(uneDate) == true) {
+			nbh += this.releveHoraire.get(uneDate);
+		}
+		if (nbh <= 8) {
+			this.releveHoraire.put(uneDate, new Integer(nbh));
+		} else {
+			this.releveHoraire.put(uneDate, new Integer(8));
+		}
+	}
+
+	public int nbHeuresEffectuees() {
+		int nbh;
+		
+		
+		return nbh;
+	}
+}

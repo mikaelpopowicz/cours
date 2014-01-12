@@ -1,0 +1,81 @@
+import java.io.IOException;
+import java.util.LinkedList;
+
+
+public class Soft {
+
+	private String nom;
+	private LinkedList<Projet> lesProjets = new LinkedList<Projet>();
+	private String title;
+	
+	public Soft() {
+		this.setNom("MissionSoft");
+		this.setTitle(	"\t\t@|||||||||||||||||||||||||||||||||@\n" +
+						"\t\t@||        Menu principal       ||@\n" +
+						"\t\t@|||||||||||||||||||||||||||||||||@\n" +
+						"\t\t" + this.nom + "\n");
+	}
+	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	
+	public String getNom() { return this.nom; }
+	public String getTitle() { return this.title; }
+	public LinkedList<Projet> getLesProjets() { return this.lesProjets; }
+	
+	
+	
+	
+	
+	
+	
+	public void menu() {
+		try {
+			Runtime.getRuntime().exec("clear");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		int choix;
+		do {
+			System.out.println("\t\tGestion du magasin\n\t\t------------------");
+			System.out.println("\n\tDashBoard\n\t---------");
+			System.out.println("\n\tNom : \t"+this.getName()+"\t\t\tSolde : "+this.getSolde());
+			System.out.println("\n\tAdresse : \t"+this.getAdresse()+"\t\tCA : "+this.getCa());
+			System.out.println("\n\tVille : \t"+this.getVille()+"\t\tVentes : "+this.getRegAchat().size());
+			System.out.println("\n\tCode postal : \t"+this.getCp()+"\t\t\tAchats : "+this.getRegVente().size());
+			System.out.println("\n\tTéléphone : \t"+this.getTel()+"\t\t\tRésultat : "+this.getSolde());
+			System.out.println("\n\n\tMenu\n\t----");
+			
+			choix = Console.saisirInt();
+			switch (choix) {
+			case 1:
+				
+				break;
+
+			default:
+				break;
+			}
+		} while (choix != 0);	
+	}
+	
+	public void run() {
+		
+	}
+	
+	
+	/**
+	 * Main, création d'un objet Soft, execution du soft
+	 * @param args
+	 */
+	public static void main(String args[]) {
+		Soft unS = new Soft();
+		System.out.println(unS.getTitle());
+	}
+
+}

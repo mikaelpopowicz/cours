@@ -27,7 +27,6 @@ public class Accueil extends JPanel{
 	
 	private void initAccueil() {
 		this.setName("Accueil");
-		this.setLayout(new BorderLayout());
 		
 		// DŽfinition du titre
 		JLabel title = new JLabel("Bienvenue dans la gestion de la casse");

@@ -12,7 +12,8 @@ public class Constructeur {
 		this.setStatut("");
 	}
 	
-	public Constructeur(String nom, String pays, String statut) {
+	public Constructeur(int id, String nom, String pays, String statut) {
+		this.setId(id);
 		this.setNom(nom);
 		this.setPays(pays);
 		this.setStatut(statut);

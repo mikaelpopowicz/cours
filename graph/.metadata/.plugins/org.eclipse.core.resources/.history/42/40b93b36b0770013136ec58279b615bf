@@ -1,0 +1,8 @@
+
+public class Intervenant {
+
+	public Intervenant() {
+		// TODO Auto-generated constructor stub
+	}
+
+}

@@ -1,0 +1,23 @@
+package Entities;
+
+public class Intervenant {
+
+	private String nom;
+	private float tauxHoraire;
+	
+	public Intervenant() {
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	public void setTauxHoraire(float taux) {
+		this.tauxHoraire = taux;
+	}
+	
+	public String getNom() { return this.nom; }
+	public float getTauxHoraire() { return this.tauxHoraire; }
+}
