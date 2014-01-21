@@ -1,0 +1,9 @@
+
+public class MissionManager extends Manager {
+
+	public MissionManager(BDD uneBdd) {
+		super(uneBdd);
+		// TODO Auto-generated constructor stub
+	}
+
+}

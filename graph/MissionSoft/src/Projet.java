@@ -3,12 +3,16 @@ import java.util.LinkedList;
 
 public class Projet {
 	
+	private int id;
 	private String nom;
 	private Date debut, fin;
 	private float prixFactureMO;
 	private LinkedList<Mission> missions;
+	private MissionManager manM = new MissionManager(new BDD("localhost", "projet", "root", "toor"));
+	
 
 	public Projet() {
+		this.setId(0);
 		this.setNom("");
 		this.setDebut(new Date());
 		this.setFin(new Date());
@@ -16,7 +20,17 @@ public class Projet {
 		this.setMissions(new LinkedList<Mission>());
 	}
 	
-	public Projet(String nom, Date debut, Date fin, float prix, LinkedList<Mission> missions) {
+	public Projet(int id, String nom, Date debut, Date fin, float prix) {
+		this.setId(id);
+		this.setNom(nom);
+		this.setDebut(debut);
+		this.setFin(fin);
+		this.setPrixFactureMO(prix);
+		this.loadMission();
+	}
+	
+	public Projet(int id, String nom, Date debut, Date fin, float prix, LinkedList<Mission> missions) {
+		this.setId(id);
 		this.setNom(nom);
 		this.setDebut(debut);
 		this.setFin(fin);
@@ -24,7 +38,10 @@ public class Projet {
 		this.setMissions(missions);
 	}
 	
-
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
@@ -45,6 +62,7 @@ public class Projet {
 		this.missions = missions;
 	}
 	
+	public int getId() { return this.id; }
 	public String getNom() { return this.nom; }
 	public Date getDebut() { return this.debut; }
 	public Date getFin() { return this.fin; }
@@ -126,5 +144,23 @@ public class Projet {
 		String test[] = date.split("/");
 		Date debut = new Date(Integer.parseInt(test[0]), Integer.parseInt(test[1]), Integer.parseInt(test[2]));
 		this.setDebut(debut);
+	}
+	
+	public void loadMission() {
+		this.manM.setSql("SELECT * FROM mission WHERE id_p = " + this.id);
+		this.missions = this.manM.getList();
+	}
+	
+	public void voir() {
+		System.out.println("\n\t\tProjet : " + this.nom);
+		System.out.println("\n\tDébut : " + this.debut.toString() + "\tFin : " + this.fin.toString());
+		System.out.println("\n\tPrix facturé : " + this.prixFactureMO);
+		System.out.println("\n\tMissions :");
+		for(Mission mission : this.missions) {
+			System.out.println("\n\t\t" + mission.getNom());
+			System.out.println("\n\t\t" + mission.getDescription());
+			System.out.println("\n\t\t" + mission.getNbHeuresPrevues() + " h");
+			System.out.println("\n\t\t" + mission.getExecutant().getNom());
+		}
 	}
 }

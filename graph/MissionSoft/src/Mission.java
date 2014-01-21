@@ -1,13 +1,17 @@
 
 
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class Mission {
 
+	private int id;
 	private String nom, description;
 	private int nbHeuresPrevues;
 	private HashMap<Date, Integer> releveHoraire;
 	private Intervenant executant;
+	private float temp;
+	private IntervenantManager manI = new IntervenantManager(new BDD("localhost", "projet", "root", "toor"));
 	
 	public Mission() {
 		this.setNom("");
@@ -17,12 +21,24 @@ public class Mission {
 		this.setExecutant(new Intervenant());
 	}
 	
+	public Mission(int id, String nom, String desc, int nbh, float inter) {
+		this.setNom(nom);
+		this.setDescription(desc);
+		this.setNbHeuresPrevues(nbh);
+		this.loadIntervenant();
+		this.temp = inter;
+	}
+	
 	public Mission(String nom, String desc, int nbh, HashMap<Date, Integer> releve, Intervenant executant) {
 		this.setNom(nom);
 		this.setDescription(desc);
 		this.setNbHeuresPrevues(nbh);
 		this.setReleveHoraire(releve);
 		this.setExecutant(executant);
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 	public void setNom(String nom) {
@@ -45,6 +61,7 @@ public class Mission {
 		this.executant = executant;
 	}
 	
+	public int getId() { return this.id; }
 	public String getNom() { return this.nom; }
 	public String getDescription() { return this.description; }
 	public int getNbHeuresPrevues() { return this.nbHeuresPrevues; }
@@ -68,5 +85,15 @@ public class Mission {
 			nbh += this.releveHoraire.get(uneDate);
 		}
 		return nbh;
+	}
+	
+	public void loadIntervenant() {
+		this.manI.setSql("SELECT * FROM intervenant WHERE id_i = " + this.temp);
+		if(this.manI.getList().size() > 0) {
+			this.setExecutant(this.manI.getList().get(0));
+		} else {
+			this.setExecutant(new Intervenant());
+		}
+		//this.setExecutant(this.manI.getList().get(0));	
 	}
 }

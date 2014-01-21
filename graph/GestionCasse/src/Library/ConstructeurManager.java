@@ -30,9 +30,11 @@ public class ConstructeurManager extends Manager{
 			while(result.next()) {
 				int id = result.getInt("id_const");
 				String nom = result.getString("nom");
-				String pays = result.getString("pays");
-				String statut = result.getString("statut");
-				Constructeur constructeur = new Constructeur(id, nom, pays, statut);
+				String debut = result.getString("debut");
+				String temp [] = debut.split("-");
+				String fin = result.getString("fin");
+				String prixFactureMO = result.getString("prixFactureMO");
+				Projet projet = new Projet(id, nom, pays, statut);
 				liste.add(constructeur);
 			}
 			

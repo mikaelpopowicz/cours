@@ -8,6 +8,8 @@ public class Soft {
 	private LinkedList<Projet> lesProjets = new LinkedList<Projet>();
 	private LinkedList<Intervenant> lesInter = new LinkedList<Intervenant>();
 	private String title;
+	private BDD sql;
+	private ProjetManager manP;
 	
 	public Soft() {
 		this.setNom("MissionSoft");
@@ -15,6 +17,9 @@ public class Soft {
 						"\t\t@||        Menu principal       ||@\n" +
 						"\t\t@|||||||||||||||||||||||||||||||||@\n" +
 						"\t\t" + this.nom + "\n");
+		this.sql = new BDD("localhost", "projet", "root", "toor");
+		this.manP = new ProjetManager(sql);
+		this.loadData();
 	}
 	
 	public void setNom(String nom) {
@@ -82,13 +87,10 @@ public class Soft {
 			System.out.println("\n\t0) Quitter");
 			System.out.println("\n\tSaisir le numŽro du projet ˆ voir/modifier");
 			choix = Console.saisirInt();
-			switch (choix) {
-			case 1:Projet unP = new Projet();unP.saisir();this.lesProjets.add(unP);
-				break;
-			case 2:if(this.lesProjets.size() > 0 ) { }
-				break;
-			default:
-				break;
+			for(int i = 0; i < this.lesProjets.size(); i++) {
+				if(choix == (i+1)) {
+					this.lesProjets.get(i).voir();
+				}
 			}
 		} while (choix != 0);
 	}
@@ -124,6 +126,10 @@ public class Soft {
 				break;
 			}
 		} while (choix != 0);	
+	}
+	
+	public void loadData() {
+		this.lesProjets = this.manP.getList();
 	}
 	
 	/**

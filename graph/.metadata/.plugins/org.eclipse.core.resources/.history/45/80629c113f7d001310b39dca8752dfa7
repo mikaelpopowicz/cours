@@ -1,0 +1,34 @@
+
+
+public class Intervenant {
+
+	private int id;
+	private String nom;
+	private float tauxHoraire;
+	
+	public Intervenant() {
+		this.setNom("");
+		this.setTauxHoraire(0);
+	}
+	
+	public Intervenant(String nom, float taux) {
+		this.setNom(nom);
+		this.setTauxHoraire(taux);
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+	
+	public void setTauxHoraire(float taux) {
+		this.tauxHoraire = taux;
+	}
+	
+	public int getId() { return this.id; }
+	public String getNom() { return this.nom; }
+	public float getTauxHoraire() { return this.tauxHoraire; }
+}
