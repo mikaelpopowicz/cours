@@ -48,6 +48,48 @@ class BateauVoyageur extends Bateau
 		return $string;
 	}
 }
+
+class Passerelle
+{
+	public static function chargerLesBateauxVoyageurs()
+	{
+		$requete = new JeuEnregistrement('SELECT id AS idBat, nom AS nomBat, longueur AS longueurBaT, largeur AS largeurBat, vitesse AS vitesseBatVoy, image AS imageBatVoy
+								FROM BATEAU
+								WHERE type = `v`');
+		$listeBateaux = array();
+		while($requete->fin() != true) {
+			$listeBateaux[] = new BateauVoyageur(array(
+				"idBat" => $requete->getValeur("id"),
+				"nomBat" => $requete->getValeur("nom"),
+				"longueurBat" => $requete->getValeur("longueur"),
+				"largeurBat" => $requete->getValeur("largeur"),
+				"vitesseBatVoy" => $requete->getValeur("vitesse"),
+				"imageBatVoy" => $requete->getValeur("image"),
+			));
+		}
+		$requete->fermer();
+		foreach ($listeBateaux as $bateau) {
+			$bateau->setLesEquipements(Passerelle::chargerLesEquipements($bateau->idBat()));
+		}
+		return $listeBateaux;
+	}
+}
+
+function BrochurePDF()
+{
+	$batteaux = array();
+	$bateaux = Passerelle::chargerLesBateauxVoyageurs();
+	foreach ($bateaux as $bt) {
+		$bt->setLesEquipements(Passerelle::chargerLesEquipements($bt->idBat()));
+	}
+	$pdf = new PDF("BateauVoyageur.pdf");
+	foreach ($bateaux as $bt) {
+		$pfd->chargerImage($bt->imageBatVoy());
+		$pdf->ecrireTexte($bt->toString());
+	}
+	$pdf->fermer();
+}
+
 $bat = new BateauVoyageur(array(
 	"id" => 1,
 	"nomBat" => "Bateau de fou",
@@ -60,6 +102,7 @@ $bat = new BateauVoyageur(array(
 		"Bar"
 	)
 ));
+
 ?>
 <html>
 <head>
