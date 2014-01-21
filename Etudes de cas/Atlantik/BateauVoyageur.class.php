@@ -51,6 +51,17 @@ class BateauVoyageur extends Bateau
 
 class Passerelle
 {
+	public static function chargerLesEquipements($id)
+	{
+		$requete = new JeuEnregistrement('SELECT * FROM EQUIPEMENT WHERE id IN(SELECT idEquip FROM POSSEDER WHERE idBat = '.$id.')');
+		$listeEquipements = array();
+		while($requete->fin() != true) {
+			$listeEquipements[] = new Equipement($requete->getValeur('id'), $requete->getValeur('lib'));
+		}
+		$requete->fermer();
+		return $listeEquipements;
+	}
+	
 	public static function chargerLesBateauxVoyageurs()
 	{
 		$requete = new JeuEnregistrement('SELECT * FROM BATEAU WHERE type = `v`');
@@ -63,12 +74,10 @@ class Passerelle
 				"largeurBat" => $requete->getValeur("largeur"),
 				"vitesseBatVoy" => $requete->getValeur("vitesse"),
 				"imageBatVoy" => $requete->getValeur("image"),
+				"lesEquipements" => Passerelle::chargerLesEquipements($requete->getValeur('id'))
 			));
 		}
 		$requete->fermer();
-		foreach ($listeBateaux as $bateau) {
-			$bateau->setLesEquipements(Passerelle::chargerLesEquipements($bateau->idBat()));
-		}
 		return $listeBateaux;
 	}
 }
