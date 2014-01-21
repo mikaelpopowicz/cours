@@ -53,9 +53,7 @@ class Passerelle
 {
 	public static function chargerLesBateauxVoyageurs()
 	{
-		$requete = new JeuEnregistrement('SELECT id AS idBat, nom AS nomBat, longueur AS longueurBaT, largeur AS largeurBat, vitesse AS vitesseBatVoy, image AS imageBatVoy
-								FROM BATEAU
-								WHERE type = `v`');
+		$requete = new JeuEnregistrement('SELECT * FROM BATEAU WHERE type = `v`');
 		$listeBateaux = array();
 		while($requete->fin() != true) {
 			$listeBateaux[] = new BateauVoyageur(array(
