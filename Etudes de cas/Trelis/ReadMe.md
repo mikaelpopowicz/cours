@@ -41,4 +41,6 @@ Instructions :
 - Vérifier s'il y un message avec ce code
 - Si il y a un message, récupérer son XML et le placer dans la vue XML, sinon afficher une notification erreur dans le vuexml
 
-Résultat : [Voir le fichier code.java]()
+Résultat : [Voir le fichier code.java](https://github.com/miko91/cours/blob/master/Etudes%20de%20cas/Trelis/code.java)
+
+
