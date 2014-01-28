@@ -46,4 +46,4 @@ Résultat : [Voir le fichier code.java](https://github.com/miko91/cours/blob/mas
 
 ####3]  Ecrire l'entête de la fonction estDiffusée() : nom de la fonction, nom(s) et type(s) des arguments éventuels, type de retour, le corps de cette fonction.
 
-Résultat : [Voir le fichier message.java](https://github.com/miko91/cours/blob/master/Etudes%20de%20cas/Trelis/code.java)
+Résultat : [Voir le fichier message.java](https://github.com/miko91/cours/blob/master/Etudes%20de%20cas/Trelis/message.java)
