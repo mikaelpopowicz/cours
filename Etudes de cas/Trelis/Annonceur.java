@@ -15,24 +15,25 @@ class Annonceur
 	
 	public void trierLesMessages(LinkedList<Message> messagesATrier)
 	{
+		/*
+			Utilisation de la méthode trier()
+			
+			messagesATrier.trier();
+		*/
+		
+		
 		Message temp;
-		for(Messages unMessage : messagesATrier)
-		{
-			/*
-				Utilisation de la méthode trier()
-				
-				messagesATrier.trier(unMessage.compare());
-			*/
-			temp = unMessage;
-			if(unMessage.compare() == 1)
-			{
-				messagesATrier.set(messagesATrier.indexOf(unMessage), messagesATrier.get(messagesATrier.indexOf(unMessage)+1));
-				messagesATrier.set(messagesATrier.get(messagesATrier.indexOf(unMessage)+1), temp);
-			} else if (unMessage.commpare() == -1)
-			{
-				messagesATrier.set(messagesATrier.indexOf(unMessage), messagesATrier.get(messagesATrier.indexOf(unMessage)-1));
-				messagesATrier.set(messagesATrier.get(messagesATrier.indexOf(unMessage)-1), temp);
+		boolean permut;
+		do {
+			permut = false;
+			for (int i = 0; i < messagesATrier.size(); i++) {
+				if(messagesATrier.get(i).compare(messagesATrier.get(i+1)) == 1)
+				{
+					messagesATrier.set(messagesATrier.indexOf(unMessage), messagesATrier.get(messagesATrier.indexOf(unMessage)+1));
+					messagesATrier.set(messagesATrier.get(messagesATrier.indexOf(unMessage)+1), temp);
+					permut = true;
+				}
 			}
-		}
+		} while (permut == true);
 	}
 }
