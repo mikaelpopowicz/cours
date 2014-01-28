@@ -14,11 +14,11 @@ class Message
 	
 	public int compare(Message unMessage)
 	{
-		if(duree == unMessage.duree)
+		if(this.duree == unMessage.duree)
 		{
 			return 0;
 		}
-		else if (duree > unMessage.duree)
+		else if (this.duree > unMessage.duree)
 		{
 			return 1;
 		}

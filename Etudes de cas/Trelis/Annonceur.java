@@ -18,6 +18,11 @@ class Annonceur
 		Message temp;
 		for(Messages unMessage : messagesATrier)
 		{
+			/*
+				Utilisation de la méthode trier()
+				
+				messagesATrier.trier(unMessage.compare());
+			*/
 			temp = unMessage;
 			if(unMessage.compare() == 1)
 			{
