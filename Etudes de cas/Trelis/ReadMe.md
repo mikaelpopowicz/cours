@@ -32,6 +32,8 @@ début
 fin
 // la fonction enChaine()convertit un entier en chaîne de caractères
 ```
+
+
 ####2] Écrire la procédure afficherUnMessage() en prenant appui sur la description du cas d’utilisation
 Instructions :
   
@@ -39,3 +41,4 @@ Instructions :
 - Vérifier s'il y un message avec ce code
 - Si il y a un message, récupérer son XML et le placer dans la vue XML, sinon afficher une notification erreur dans le vuexml
 
+Résultat : [Voir le fichier code.java]()
