@@ -1,9 +1,0 @@
-
-public class ProjetManager extends Manager {
-
-	public ProjetManager(BDD uneBdd) {
-		super(uneBdd);
-		
-	}
-
-}

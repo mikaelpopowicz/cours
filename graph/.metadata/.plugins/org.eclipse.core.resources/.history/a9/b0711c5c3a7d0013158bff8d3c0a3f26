@@ -1,9 +1,0 @@
-
-public class IntervenantManager extends Manager {
-
-	public IntervenantManager(BDD uneBdd) {
-		super(uneBdd);
-		// TODO Auto-generated constructor stub
-	}
-
-}

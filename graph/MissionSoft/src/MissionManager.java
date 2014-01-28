@@ -32,6 +32,7 @@ public class MissionManager extends Manager {
 				int inter = result.getInt("id_i");
 				Mission mission = new Mission(id, nom, desc, nbh, inter);
 				liste.add(mission);
+				liste.
 			}
 			
 			// Fermeture de la connexion, de l'tat et du rsultat
