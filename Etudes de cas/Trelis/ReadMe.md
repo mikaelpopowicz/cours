@@ -1,6 +1,6 @@
 #Etude de cas - Trelis
 
-#####1] En observant le code fourni, expliquer les causes des dysfonctionnements actuels de la méthode toXML() de la classe Message.
+####1] En observant le code fourni, expliquer les causes des dysfonctionnements actuels de la méthode toXML() de la classe Message.
 Il manque la description dans la classe message, et dans la boucle ne va pas au bout de la collection
 
 ```
@@ -32,3 +32,10 @@ début
 fin
 // la fonction enChaine()convertit un entier en chaîne de caractères
 ```
+####2] Écrire la procédure afficherUnMessage() en prenant appui sur la description du cas d’utilisation
+Instructions :
+  
+- Récupérer le code de zoneCode
+- Vérifier s'il y un message avec ce code
+- Si il y a un message, récupérer son XML et le placer dans la vue XML, sinon afficher une notification erreur dans le vuexml
+
