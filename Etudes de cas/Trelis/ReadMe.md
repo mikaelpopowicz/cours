@@ -12,13 +12,13 @@ début
 	resultat ← "<message>"
 	// le + indique la concaténation de chaîne de caractères
 	resultat ← resultat + "<code>" + code
+	resultat ← resultat + "</code>"
 ```
 
-	**resultat ← resultat + "`</code>`"**  
-	**resultat ← resultat + "<description>" + description**
+**resultat ← resultat + "`<description>`" + description**
+**resultat ← resultat + "`</description>`"**
 
 ```
-	resultat ← resultat + "</description>"
 	resultat ← resultat + "<durée>" + duree.enChaine() 
 	resultat ← resultat + "</durée>"
 	i ← 1
