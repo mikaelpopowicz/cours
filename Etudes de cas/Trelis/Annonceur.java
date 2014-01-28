@@ -1,6 +1,6 @@
 class Annonceur
 {
-	messagesAyantDiffusions()
+	public LinkedList<Message> messagesAyantDiffusions()
 	{
 		LinkedList<Message> messages = new LinkedList<Message>();
 		for(Message unMessage : lesMessages)
