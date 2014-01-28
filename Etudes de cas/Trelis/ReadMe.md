@@ -51,3 +51,9 @@ Résultat : [Voir le fichier Message.java](https://github.com/miko91/cours/blob/
 ####4] Écrire la méthode messagesAyantDiffusions() de la classe Annonceur.
 
 Résultat : [Voir le fichier Annonceur.java](https://github.com/miko91/cours/blob/master/Etudes%20de%20cas/Trelis/Annonceur.java)
+
+####5] Écrire la méthode compare() de la classe Message.
+
+
+
+####6] Écrire la méthode trierLesMessages() de la classe Annonceur.
