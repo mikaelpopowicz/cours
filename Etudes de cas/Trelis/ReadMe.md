@@ -15,7 +15,7 @@ début
 	resultat ← resultat + "</code>"
 ```
 
-**resultat ← resultat + "`<description>`" + description**
+**resultat ← resultat + "`<description>`" + description**  
 **resultat ← resultat + "`</description>`"**
 
 ```
