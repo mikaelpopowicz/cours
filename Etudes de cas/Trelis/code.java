@@ -1,9 +1,6 @@
 void afficherUnMessage(Annonceur unAnnonceur)
 {
-	String code;
-	code = zoneCode.getText();
-	
-	if(unAnnonceur.existe(code) == true)
+	if(unAnnonceur.existe(zoneCode.getText()) == true)
 	{
 		vueXML.setText(unAnnonceur.getMessage(code).toXML());
 	}
