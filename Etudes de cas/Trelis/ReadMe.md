@@ -4,18 +4,27 @@
 Il manque la description dans la classe message
 
 ```
-bootstrap/
-├── css/
-│   ├── bootstrap.css
-│   ├── bootstrap.min.css
-│   ├── bootstrap-theme.css
-│   └── bootstrap-theme.min.css
-├── js/
-│   ├── bootstrap.js
-│   └── bootstrap.min.js
-└── fonts/
-    ├── glyphicons-halflings-regular.eot
-    ├── glyphicons-halflings-regular.svg
-    ├── glyphicons-halflings-regular.ttf
-    └── glyphicons-halflings-regular.woff
+Fonction toXML() : chaîne
+	resultat : chaîne 
+	i : entier //variable de boucle
+	nbDiffusions : entier
+début
+	resultat ← "<message>"
+	// le + indique la concaténation de chaîne de caractères
+	resultat ← resultat + "<code>" + code 
+	resultat ← resultat + "</code>"
+	
+	resultat ← resultat + "<durée>" + duree.enChaine() 
+	resultat ← resultat + "</durée>"
+	i ← 1
+	nbDiffusions ← lesDiffusions.cardinal()
+	TantQue i < nbDiffusions Faire
+		resultat ← resultat + lesDiffusions.extraireObjet(i).toXML()
+		i ← i+1
+	FTQ
+	resultat ← resultat + "</message>"
+	retourner resultat
+fin
+// la fonction enChaine()convertit un entier en chaîne de caractères
+
 ```
