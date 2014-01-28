@@ -11,9 +11,11 @@ Fonction toXML() : chaîne
 début
 	resultat ← "<message>"
 	// le + indique la concaténation de chaîne de caractères
-	resultat ← resultat + "<code>" + code 
+	resultat ← resultat + "<code>" + code
+```
 	**resultat ← resultat + "</code>"**
-	__resultat ← resultat + "<description>" + description__
+	**resultat ← resultat + "<description>" + description**
+```
 	resultat ← resultat + "</description>"
 	resultat ← resultat + "<durée>" + duree.enChaine() 
 	resultat ← resultat + "</durée>"
@@ -27,5 +29,4 @@ début
 	retourner resultat
 fin
 // la fonction enChaine()convertit un entier en chaîne de caractères
-
 ```
