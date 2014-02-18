@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="Panels.Configuration"/>
-<fullyQualifiedTypeName name="Panels.DashBoard"/>
-<fullyQualifiedTypeName name="Application"/>
-<fullyQualifiedTypeName name="Magasin"/>
-<fullyQualifiedTypeName name="AppConsole"/>
-<fullyQualifiedTypeName name="java.lang.Runtime"/>
-<fullyQualifiedTypeName name="Console"/>
 <fullyQualifiedTypeName name="java.lang.ClassNotFoundException"/>
 <fullyQualifiedTypeName name="java.sql.DriverManager"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.Connection"/>
@@ -60,4 +53,11 @@
 <fullyQualifiedTypeName name="BDD"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="Intervenant"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.content.Intent"/>
+<fullyQualifiedTypeName name="com.example.exemple.About"/>
+<fullyQualifiedTypeName name="com.example.exemple.R.id"/>
 </qualifiedTypeNameHistroy>

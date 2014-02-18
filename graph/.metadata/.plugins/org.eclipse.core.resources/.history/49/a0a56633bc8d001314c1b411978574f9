@@ -1,0 +1,37 @@
+package com.example.exemple;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends Activity {
+
+	private TextView txtNom;
+	private TextView txtMessage;
+	private EditText editNom;
+	private Button btValider;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+		// Programmation des objets graphiques
+		this.txtNom = (TextView)findViewById(R.id.idNom);
+		this.txtMessage = (TextView)findViewById(R.id.Message);
+		this.editNom = (EditText)findViewById(R.id.ideditNom);
+		this.btValider = (Button)findViewById(R.id.idValider);
+		this.txtNom.setText("Votre prénom :");
+		this.txtMessage.setText("");
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+}
