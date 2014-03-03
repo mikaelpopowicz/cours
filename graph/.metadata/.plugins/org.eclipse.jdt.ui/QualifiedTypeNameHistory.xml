@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.ClassNotFoundException"/>
-<fullyQualifiedTypeName name="java.sql.DriverManager"/>
-<fullyQualifiedTypeName name="com.mysql.jdbc.Connection"/>
-<fullyQualifiedTypeName name="java.sql.Connection"/>
-<fullyQualifiedTypeName name="java.io.ObjectInputStream.GetField"/>
-<fullyQualifiedTypeName name="Casse"/>
-<fullyQualifiedTypeName name="Vehicule"/>
-<fullyQualifiedTypeName name="GestionCasse"/>
-<fullyQualifiedTypeName name="Constructeur"/>
-<fullyQualifiedTypeName name="Content"/>
-<fullyQualifiedTypeName name="java.sql.SQLException"/>
-<fullyQualifiedTypeName name="java.sql.Statement"/>
-<fullyQualifiedTypeName name="java.sql.ResultSet"/>
-<fullyQualifiedTypeName name="javax.swing.JComponent"/>
-<fullyQualifiedTypeName name="java.awt.event.FocusAdapter"/>
-<fullyQualifiedTypeName name="java.awt.event.FocusListener"/>
 <fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
 <fullyQualifiedTypeName name="VIews.Accueil"/>
 <fullyQualifiedTypeName name="javax.swing.JLabel"/>
@@ -23,7 +7,6 @@
 <fullyQualifiedTypeName name="VIews.Bar"/>
 <fullyQualifiedTypeName name="javax.swing.JMenuItem"/>
 <fullyQualifiedTypeName name="javax.swing.JFrame"/>
-<fullyQualifiedTypeName name="java.lang.Boolean"/>
 <fullyQualifiedTypeName name="java.awt.Color"/>
 <fullyQualifiedTypeName name="javax.swing.border.Border"/>
 <fullyQualifiedTypeName name="javax.swing.BorderFactory"/>
@@ -53,11 +36,28 @@
 <fullyQualifiedTypeName name="BDD"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="Intervenant"/>
-<fullyQualifiedTypeName name="android.widget.TextView"/>
-<fullyQualifiedTypeName name="android.widget.EditText"/>
-<fullyQualifiedTypeName name="android.widget.Button"/>
-<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
 <fullyQualifiedTypeName name="android.content.Intent"/>
 <fullyQualifiedTypeName name="com.example.exemple.About"/>
 <fullyQualifiedTypeName name="com.example.exemple.R.id"/>
+<fullyQualifiedTypeName name="java.lang.Boolean"/>
+<fullyQualifiedTypeName name="android.provider.ContactsContract.CommonDataKinds.Relation"/>
+<fullyQualifiedTypeName name="android.widget.RelativeLayout"/>
+<fullyQualifiedTypeName name="com.example.test.R.string"/>
+<fullyQualifiedTypeName name="android.text.Layout"/>
+<fullyQualifiedTypeName name="android.R.layout"/>
+<fullyQualifiedTypeName name="android.net.wifi.p2p.WifiP2pManager.ActionListener"/>
+<fullyQualifiedTypeName name="com.example.test.R.layout"/>
+<fullyQualifiedTypeName name="android.view.View.OnTouchListener"/>
+<fullyQualifiedTypeName name="com.example.test.R.id"/>
+<fullyQualifiedTypeName name="android.widget.Button"/>
+<fullyQualifiedTypeName name="android.widget.EditText"/>
+<fullyQualifiedTypeName name="android.widget.RadioGroup"/>
+<fullyQualifiedTypeName name="android.widget.TextView"/>
+<fullyQualifiedTypeName name="android.widget.CheckBox"/>
+<fullyQualifiedTypeName name="android.text.TextWatcher"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="com.example.test.MainActivity"/>
+<fullyQualifiedTypeName name="android.widget.Toast"/>
+<fullyQualifiedTypeName name="java.lang.Float"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
 </qualifiedTypeNameHistroy>

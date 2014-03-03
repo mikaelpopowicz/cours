@@ -1,0 +1,55 @@
+package com.example.test;
+
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.net.wifi.p2p.WifiP2pManager.ActionListener;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+@SuppressLint("NewApi")
+public class MainActivity extends Activity implements OnClickListener {
+	
+	private Boolean authenticated = false;
+	private TextView text = null;
+	private String hello = null;
+	private RelativeLayout layout = null;
+	private Button bouton = null;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+		layout = (RelativeLayout) RelativeLayout.inflate(this, R.layout.activity_main, null);
+		text = (TextView) layout.findViewById(R.id.textView1);
+		bouton = (Button) layout.findViewById(R.id.button1);
+		bouton.setClickable(true);
+		
+		
+		if(authenticated == true) {
+			hello = "Déconnexion";
+			
+			bouton.setText("Déconnexion");
+			text.setText(hello);
+		} else {
+			//layout = (RelativeLayout) RelativeLayout.inflate(this, R.layout.activity_main, null);
+			hello = "Connexion";
+			bouton.setText("Connexion");
+			text.setText(hello);
+			
+		}
+		
+		setContentView(layout);
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
